@@ -1,0 +1,351 @@
+@font-face {
+    font-family: "Helvetica Neue Arabic 75 Bold";
+    src: url("../../../fonts/HelveticaNeueLTArabic-Bold.ttf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Helvetica Neue Arabic 45 Light";
+    src: url("../../../fonts/HelveticaNeueLTArabic-Light.ttf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  html, body {
+    font-family: "Helvetica Neue Arabic 45 Light";
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch; 
+    position: relative;
+  }
+  
+  h2.verify-title {
+    font-family: "Helvetica Neue Arabic 75 Bold";
+    font-weight: 700;
+    font-size: 24px;
+    color: #2965bd;
+    margin-bottom: 10px;
+  }
+  p.font-semibold, .font-semibold {
+    font-family: "Helvetica Neue Arabic 75 Bold";
+    font-weight: 700;
+  }
+  .width-sidebar-logo{
+    width: 10rem;
+  }
+  img.mx-auto.mb-4.width-sidebar-logo {
+    height: 15rem;
+    width: auto;
+}
+.card-position{
+    margin-bottom: -0.3rem;
+}
+.div#sidebar {
+  width: 90%;
+ }
+  .footer-text{
+color: #172845;
+font-family: "Helvetica Neue Arabic 45 Light";
+font-size: 11px;
+  }
+  .language-arabic{
+    font-family: "Helvetica Neue Arabic 45 Light";
+    color: #072a64;
+  }
+  h2.text-lg {
+    font-family: "Helvetica Neue Arabic 75 Bold";
+    font-weight: 700;
+    color: #2965bd;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  
+  header {
+    background-color: #082A64;
+    width: 100%;
+  }
+  
+  .hamburger-svg {
+    height: 2rem;
+    color: #fff;
+  }
+  .sidebar {
+    background-color: white;
+    width: 280px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .banner{
+    background-color: #E5E8EF;
+  }
+  .sidebar-visible {
+    transform: translateX(0);
+  }
+  
+  .sidebar .logo-container {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .sidebar .logo-container img {
+    width: 120px;
+    height: auto;
+  }
+  
+  .sidebar .language-selector {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #D1D5DB;
+  }
+  
+  .sidebar .language-selector img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .sidebar .language-selector span {
+    font-family: "Helvetica Neue Arabic 75 Bold";
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .sidebar .footer {
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  .sidebar .footer img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 0.75rem;
+  }
+  
+  .sidebar .footer a {
+    display: block;
+    font-family: "Helvetica Neue Arabic 75 Bold";
+    color: #1D4289;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar .footer p {
+    font-size: 12px;
+    color: #6B7280;
+    margin: 0;
+  }
+
+  .main-container {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 100vh;
+    overflow-y: auto !important; 
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+  
+  .content-container {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    overflow-y: visible;
+  }
+  .flex.items-center.gap-2.p-4 {
+    border-bottom: 0.5px solid #939BA9;
+    border-top: 2px solid #585a5c;
+}
+  .card {
+    background-color: #F0F2F7;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  .flex.flex-col.justify-between.h-full {
+    background-color: white;
+}
+  .card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-title {
+    font-family: "Helvetica Neue Arabic 75 Bold";
+    font-size: 16px;
+    color: #000;
+    margin: 0.25rem 0;
+  }
+  
+  .card-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+
+  .residency-card {
+    background-color: #E5E8EF;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .residency-card img {
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+  
+  .residency-card .text-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .residency-card .card-title {
+    font-family: "Helvetica Neue Arabic 75 Bold";
+    font-size: 16px;
+    color: #000;
+    margin: 0 0 0.25rem 0;
+  }
+  
+  .residency-card .card-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .blue-card {
+    background-color: #1D4289;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .blue-card img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 0.75rem;
+  }
+  
+  .blue-card p {
+    font-family: "Helvetica Neue Arabic 75 Bold";
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+  .card.p-4.flex.flex-col.items-start.h-full {
+    height: 10rem;
+  }
+  .blue-button, .verification-button {
+    background-color: white;
+    color: #1D4289;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-family: "Helvetica Neue Arabic 75 Bold";
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .blue-button:hover, .verification-button:hover {
+    background-color: #f8f9fa;
+  }
+  
+  #overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    display: none;
+  }
+
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .grid-2-cols {
+    display: grid;
+    grid-template-columns: 0 1fr;
+    gap: 1rem;
+  }
+  .scrollable-container {
+    height: auto;
+    max-height: none;
+    overflow-y: visible !important;
+  }
+  
+  @media (max-width: 640px) {
+    .sidebar {
+      width: 85%;
+      max-width: 280px;
+    }
+    
+    .grid-2-cols {
+      grid-template-columns: 1fr;
+    }
+    
+    .content-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    body, html, .main-container {
+      overflow-x: hidden;
+      overflow-y: auto !important;
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 767px) {
+    .main-container {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .main-container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+  }
+  
+  @supports (-webkit-touch-callout: none) {
+    html, body {
+      height: -webkit-fill-available;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .main-container {
+      min-height: -webkit-fill-available;
+    }
+  }
+  @supports not (-webkit-touch-callout: none) {
+    html, body {
+      height: 100%;
+    }
+  }
