@@ -145,20 +145,29 @@
                             <p class="text-wrapper-22">{{ $visa->visa_number }}</p>
                         </div>
                         <div class="group-13">
-                            <div class="overlap-7">
-                                <div class="group-14">
-                                    <div class="overlap-group-4">
+                        @php
+    // Ensure exactly 45 characters per line (pad with '<' if less, trim if more)
+    $line1 = strlen($visa->barcode_text_up) < 45 
+             ? str_pad($visa->barcode_text_up, 45, '<', STR_PAD_RIGHT) 
+             : substr($visa->barcode_text_up, 0, 45);
+    $line2 = strlen($visa->barcode_text_down) < 45 
+             ? str_pad($visa->barcode_text_down, 45, '<', STR_PAD_RIGHT) 
+             : substr($visa->barcode_text_down, 0, 45);
+@endphp
 
-                                        <p class="VBKWTALI-ABDUL-MAZID">
-                                            {{ $visa->barcode_text_up }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <p class="div-2">
-                                    <span class="span-2">{{ $visa->barcode_text_down }}</span>
-                                </p>
+<div class="overlap-7">
+    <div class="group-14">
+        <div class="overlap-group-4">
+            <p class="VBKWTALI-ABDUL-MAZID fixed-width-line">
+                {{ $line1 }}
+            </p>
+        </div>
+    </div>
+    <p class="div-2 fixed-width-line">
+        <span class="span-2">{{ $line2 }}</span>
+    </p>
+</div>
 
-                            </div>
                         </div>
                         <p class="text-wrapper-25">الكفيل</p>
                         <p class="text-wrapper-26">
@@ -214,8 +223,6 @@
                             <p class="text-wrapper-56">المهنة</p>
                             <div class="group-22">
                                 <p class="text-wrapper-57">{{ $visa->visa_type_ar }}</p>
-                                {{-- <p class="text-wrapper-58">{{ $visa->visa_type_en }}</p> --}}
-                                {{-- <div class="group-23"></div> --}}
                             </div>
                         </div>
                         <img class="STATE-f-KUWAIT"
@@ -232,6 +239,7 @@
     <button id="download-pdf">Download PDF</button>
 
     <script>
+        
         document.getElementById('download-pdf').addEventListener('click', function() {
             const {
                 jsPDF
