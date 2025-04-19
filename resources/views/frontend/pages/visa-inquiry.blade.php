@@ -185,7 +185,6 @@
                     console.error("Error fetching country list:", error);
                 }
             }
-
             document.addEventListener("DOMContentLoaded", loadNationalities);
         </script>
     @endpush

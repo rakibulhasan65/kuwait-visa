@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>{{ $setting['site_title'] ?? 'Kuwait eVisa System' }}</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="#082A64" />
   <meta name="application-name" content="Kuwait Visa" />
@@ -23,12 +23,14 @@
       src: url("../../../fonts/HelveticaNeueLTArabic-Bold.ttf") format("opentype");
       font-weight: bold;
       font-style: normal;
+      font-display: swap;
     }
     @font-face {
       font-family: "Helvetica Neue Arabic 45 Light";
       src: url("../../../fonts/HelveticaNeueLTArabic-Light.ttf") format("opentype");
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
 
     html, body {
@@ -73,20 +75,25 @@
       opacity: 0 !important;
       align-items: start;
     }
+    
     header {
-      background-color: #082A64 !important;
-      width: 100% !important;
-    }
+  background-color: #082A64 !important;
+  width: 92% !important;
+  max-width: 500px !important;
+  margin: 0 auto !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 30 !important;
+}
     .hamburger-svg {
       height: 2rem !important;
       color: #fff !important;
     }
 
-
     .sidebar {
       background-color: white !important;
       width: 280px !important;
-      height: 100% !important;
+      height: 100vh !important;
       position: fixed !important;
       top: 0 !important;
       left: 0 !important;
@@ -95,7 +102,7 @@
       display: flex !important;
       flex-direction: column !important;
       justify-content: space-between !important;
-      overflow: hidden !important;
+      overflow: auto !important;
       -webkit-overflow-scrolling: touch !important;
       transition: transform 0.3s ease !important;
     }
@@ -107,6 +114,7 @@
     }
     .width-sidebar-logo {
       width: 12rem !important;
+      max-width: 90% !important;
     }
     .footer-text {
       color: #172845 !important;
@@ -134,16 +142,71 @@
       position: relative !important;
       visibility: visible !important;
     }
+    
+    /* Mobile-first container for all screen sizes */
+    .centered-content-wrapper {
+      width: 92% !important;
+      max-width: 500px !important;
+      margin: 0 auto !important;
+      position: relative !important;
+    }
+    
+    /* Header responsive adjustments - Updated to match app-banner */
+    .header-content {
+      width: 92% !important;
+      max-width: 500px !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 0.25rem 0 !important;
+      justify-content: space-between !important;
+    }
+    
+    /* Ensure hamburger button alignment matches other elements */
+    #hamburger-button {
+      padding: 0.5rem !important;
+      margin-left: -0.5rem !important;
+    }
+    
     .content-container {
       padding: 1rem;
       overflow-y: visible !important;
     }
+    
+    /* Banner container - mobile-like on desktop, full width on mobile */
+    .banner-container {
+      width: 92% !important;
+      max-width: 500px !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+    }
+    
+    /* Make banner full width only on mobile */
+    @media (max-width: 640px) {
+      header {
+    	width: 100% !important;
+    	max-width: 100% !important;
+  	  }
+      .banner-container {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+    }
+    
     h2.verify-title {
       font-family: "Helvetica Neue Arabic 75 Bold" !important;
       font-weight: 700 !important;
       font-size: 18px !important;
       color: #2E68BF !important;
+      margin-bottom: 0rem !important;
     }
+    
+    /* Added margin to Residency Inquiry heading */
+    h2.verify-title.residency-title {
+      margin-top: 1.5rem !important;
+    }
+    
     p.text-gray-600 {
       color: #555 !important;
       font-size: 14px !important;
@@ -160,25 +223,49 @@
       display: flex !important;
       flex-direction: column !important;
       align-items: flex-start !important;
-      margin-bottom: 1rem !important;
+      //margin-bottom: 1rem !important;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
-      min-height: 8rem !important;
+      min-height: 6.5rem !important; /* Reduced by 10px from 6.5rem */
+      height: 100% !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
     }
+    .card:active {
+      transform: scale(0.98) !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    }
+    
+    .card-narrow {
+      width: 100% !important;
+    }
+    
     .card img {
-      width: auto !important;
-      height: 85px !important;
+      width:auto !important;
+     
       object-fit: contain !important;
-      margin-bottom: 0.5rem !important;
+      
     }
+    
     .blue-card {
       background-color: #0D3C91 !important;
       color: white !important;
       border-radius: 0.5rem !important;
-      padding: 1.25rem !important;
+      padding: 1rem !important;
       text-align: center !important;
-      margin-bottom: 1rem !important;
+      margin-bottom: 0rem !important;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+      
+     
     }
+    .blue-card:active {
+      transform: scale(0.98) !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    }
+    
+    .blue-card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+    }
+    
     .blue-card img {
       width: auto !important;
       height: 85px !important;
@@ -187,17 +274,22 @@
 
     .blue-button, .verification-button {
       background-color: white !important;
-      color: #0D3C91 !important;
+      color: grey !important;
       border-radius: 0.5rem !important;
       padding: 0.75rem 1rem !important;
-      font-family: "Helvetica Neue Arabic 75 Bold" !important;
+      font-family: "Helvetica Neue Arabic 75" !important;
       border: none !important;
       width: 100% !important;
       font-size: 16px !important;
       cursor: pointer !important;
+      transition: background-color 0.2s ease !important;
     }
     .blue-button:hover, .verification-button:hover {
       background-color: #f0f2f7 !important;
+    }
+    .blue-button:active, .verification-button:active {
+      background-color: #e0e4f0 !important;
+      transform: scale(0.98) !important;
     }
 
     .app-banner {
@@ -205,32 +297,79 @@
       width: 100% !important;
       height: auto !important;
       object-fit: contain !important;
+      max-width: 100% !important;
     }
 
     .touch-target {
       min-height: 44px !important;
       min-width: 44px !important;
+      display: flex !important;
+      align-items: center !important;
     }
 
-    @media (max-width: 640px) {
-      .sidebar {
-        width: 85% !important;
-        max-width: 280px !important;
-      }
-      .content-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-      }
-      html, body, .main-container {
-        overflow-x: hidden !important;
-      }
-      h2.verify-title {
-        font-size:18px !important;
+    .grid-cols-2 {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 1rem !important;
+      margin-top: 1rem !important; /* Increased margin from top */
+    }
+    
+
+    /* Mobile and small screens */
+    @media (max-width: 400px) {
+      .grid-cols-2 {
+        gap: 0.75rem !important;
       }
       .card {
-        min-height: 7rem !important;
+        min-height: 5rem !important; /* Reduced from 5.5rem */
+        padding: 0.75rem !important;
+      }
+      .content-container {
+        padding: 0.75rem !important;
+      }
+      .card img {
+        height: 55px !important; /* Reduced from 45px */
+      }
+      h2.verify-title {
+        font-size: 16px !important;
+      }
+      .header-content {
+        padding: 0.1rem 0 !important;
       }
     }
+
+    /* Extra small mobile screens */
+    @media (max-width: 350px) {
+      .centered-content-wrapper {
+        width: 94% !important;
+      }
+      .header-content {
+        width: 94% !important;
+      }
+      .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+      }
+      .card {
+        min-height: 4rem !important; /* Reduced from 4.5rem */
+      }
+      .card img {
+        height: 55px !important; /* Reduced from 40px */
+      }
+      h2.verify-title {
+        font-size: 15px !important;
+      }
+      .content-container {
+        padding: 0.5rem !important;
+      }
+      p.text-gray-600 {
+        font-size: 12px !important;
+      }
+      .header-content {
+        padding: 0rem 0 !important;
+      }
+    }
+
+    /* Support for iOS devices */
     @supports (-webkit-touch-callout: none) {
       html, body {
         height: -webkit-fill-available !important;
@@ -239,6 +378,29 @@
       .main-container {
         min-height: -webkit-fill-available !important;
       }
+      .sidebar {
+        height: -webkit-fill-available !important;
+      }
+    }
+
+    /* Fix for notched phones */
+    @supports (padding-top: env(safe-area-inset-top)) {
+      body {
+        padding-top: env(safe-area-inset-top) !important;
+        padding-bottom: env(safe-area-inset-bottom) !important;
+        padding-left: env(safe-area-inset-left) !important;
+        padding-right: env(safe-area-inset-right) !important;
+      }
+      .sidebar {
+        padding-top: env(safe-area-inset-top) !important;
+        padding-bottom: env(safe-area-inset-bottom) !important;
+      }
+    }
+
+    /* Prevent text size adjustment on orientation change */
+    html {
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
     }
   </style>
 </head>
@@ -247,11 +409,15 @@
     <img id="splash-image-1" src="{{ asset('images/splash-1.png') }}" alt="Kuwait Visa Logo" />
     <img id="splash-image-2" src="{{ asset('images/app-splash.png') }}" alt="Kuwait Visa Splash" />
   </div>
-  <header class="w-full flex items-center p-2 touch-target">
-    <button id="hamburger-button" class="focus:outline-none touch-target">
-      <img src="{{ asset('images/hamburger-menu.svg') }}" alt="Menu" class="hamburger-svg" />
-    </button>
+  
+  <header class="w-full">
+    <div class="header-content">
+      <button id="hamburger-button" class="focus:outline-none touch-target">
+        <img src="{{ asset('images/hamburger-menu.svg') }}" alt="Menu" class="hamburger-svg" />
+      </button>
+    </div>
   </header>
+  
   <div id="sidebar" class="sidebar">
     <div class="flex flex-col justify-between h-full">
       <div>
@@ -270,71 +436,92 @@
       </div>
     </div>
   </div>
+  
   <div id="overlay"></div>
+  
   <div class="main-container">
-    <div class="text-center card-position">
+    <!-- Banner container - mobile-like on desktop, full width on mobile -->
+    <div class="banner-container">
       <img src="{{ asset('images/apps-banner.png') }}" alt="Kuwait Visa Logo" class="app-banner" />
     </div>
-    <div class="content-container" style="padding-bottom:0px !important">
-      <h2 class="verify-title">Verify the Visa</h2>
-      <p class="text-gray-600 text-sm">Verify visa that issued by the Ministry of Interior</p>
-      <div class="grid grid-cols-2 gap-4 mt-3">
-        <a href="{{ route('web-app-visa-inquiries') }}" class="block">
-          <div class="card p-4 flex flex-col items-start">
-            <div class="text-blue-600 mb-2">
-              <img class="w-16 h-16" src="{{ asset('images/user-icon.png') }}" alt="Inquiry Icon" />
+    
+    <div class="centered-content-wrapper">
+      <div class="content-container" style="padding-bottom:0px !important">
+        <h2 class="verify-title mt-2">Verify the Visa</h2>
+        <p class="text-gray-600 text-sm">Verify visa that issued by the Ministry of Interior</p>
+        <div class="grid-cols-2">
+          <a href="{{ route('web-app-visa-inquiries') }}" class="block">
+            <div class="card card-narrow p-4 flex flex-col items-start">
+              <div class="text-blue-900">
+                <img class="w-20 h-20" src="{{ asset('images/user-icon.png') }}" alt="Inquiry Icon" />
+              </div>
+<p class="font-bold text-gray-800 mb-1" style="font-weight: 700; 
+                                               font-size: 15px; font-family: 'Helvetica Neue Arabic 75 Bold', sans-serif; 
+                                               color: #4e5054; letter-spacing: -0.01em; text-shadow: 0 0 0.01px #6B7280;">
+  Inquiry</p>              
+              <p class="text-xs text-gray-500">Visa Inquiries</p>
             </div>
-            <p class="font-semibold text-gray-800 mb-1">Inquiry</p>
-            <p class="text-xs text-gray-500">Visa Inquiries</p>
-          </div>
-        </a>
-        <a href="{{ route('visa-verification-scan') }}" class="block">
-          <div class="card p-4 flex flex-col items-start">
-            <div class="text-blue-600 mb-2">
-              <img class="w-16 h-16" src="{{ asset('images/barcode-scaner-icon.png') }}" alt="Verify Icon" />
+          </a>
+          <a href="{{ route('visa-verification-scan') }}" class="block">
+            <div class="card card-narrow p-4 flex flex-col items-start">
+              <div class="text-blue-900">
+                <img class="w-200 h-20" src="{{ asset('images/barcode-scaner-icon.png') }}" alt="Verify Icon" />
+              </div>
+              <p class="font-bold text-gray-800 mb-1" style="font-weight: 900; 
+                                               font-size: 15px; font-family: 'Helvetica Neue Arabic 75 Bold', sans-serif; 
+                                               color: #4e5054; letter-spacing: -0.01em; text-shadow: 0 0 0.01px #6B7280;">Verify</p>
+              <p class="text-xs text-gray-500">Visa Verification</p>
             </div>
-            <p class="font-semibold text-gray-800 mb-1">Verify</p>
-            <p class="text-xs text-gray-500">Visa Verification</p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="content-container"style="padding-top:0px !important; padding-bottom:0px;">
-      <h2 class="verify-title">Residency Inquiry</h2>
-      <p class="text-gray-600 text-sm">Inquire the status of the residency</p>
-      <div class="grid grid-cols-2 gap-4 mt-3">
-        <a href="{{ route('residency-inquiries') }}" class="block">
-          <div class="card p-4 flex flex-col items-start">
-            <div class="text-blue-600 mb-2">
-              <img class="w-16 h-16" src="{{ asset('images/residency-icon.png') }}" alt="Inquiry Icon" />
-            </div>
-            <p class="font-semibold text-gray-800 mb-1">Inquiry</p>
-            <p class="text-xs text-gray-500">Residency Inquiries</p>
-          </div>
-        </a>
-        <a href="{{ route('visa-verification-scan') }}" class="block" style="display: none;">
-          <div class="card p-4 flex flex-col items-start"></div>
-        </a>
-      </div>
-    </div>
-    <div class="content-container">
-      <h2 class="text-lg font-bold text-blue-700" style="padding-top:0px !important;">Verify the Documents and Certificates</h2>
-      <p class="text-gray-600 text-sm">Verify the documents and certificates issued by the Ministry of Interior</p>
-      <div class="blue-card">
-        <div class="flex justify-center mb-3">
-          <img class="w-16 h-16" src="{{ asset('images/qr-code.png') }}" alt="MOI Logo" />
+          </a>
         </div>
-        <p class="font-semibold mb-4">Verify the Documents and Certificates</p>
-        <a href="{{ route('visa-verification-scan') }}" class="block">
-        <button class="blue-button"  >Verification</button></a>
+      </div>
+      
+      <div class="content-container" style="padding-top:0px !important; padding-bottom:0px;">
+        <h2 class="verify-title residency-title">Residency Inquiry</h2>
+        <p class="text-gray-600 text-sm">Inquire the status of the residency</p>
+        <div class="grid-cols-2">
+          <a href="{{ route('residency-inquiries') }}" class="block">
+            <div class="card card-narrow flex flex-col items-start">
+              <div class="text-blue-900">
+                <img class="w-20 h-20" src="{{ asset('images/residency-icon.png') }}" alt="Inquiry Icon" />
+              </div>
+              <p class="font-bold text-gray-800 mb-1" style="font-weight: 900; 
+                                               font-size: 15px; font-family: 'Helvetica Neue Arabic 75 Bold', sans-serif; 
+                                               color: #4e5054; letter-spacing: -0.01em; text-shadow: 0 0 0.01px #6B7280;">Inquiry</p>
+              <p class="text-xs text-gray-500">Residency Inquiries</p>
+            </div>
+          </a>
+          <div class="block" style="visibility: hidden;">
+            <div class="card card-narrow p-4 flex flex-col items-start"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content-container">
+        <h2 class="verify-title">Verify the Documents and Certificates</h2>
+        <p class="text-gray-600 text-sm">Verify the documents and certificates issued by the Ministry of Interior</p>
+        
+        <div class="flex justify-center w-full">
+          <div class="blue-card w-full">
+            <div class="flex justify-center">
+              <img class="w-16 h-16" src="{{ asset('images/qr-code.png') }}" alt="MOI Logo" />
+            </div>
+            <p class="font-semibold mb-4 text-center">Verify the Documents and Certificates</p>
+            <a href="{{ route('visa-verification-scan') }}" class="block">
+              <button class="blue-button">Verification</button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       initializeSplashScreen();
       initializeSidebar();
       initializeBodyClickToCloseSidebar();
+      handleOrientationChange();
     });
 
     function initializeSplashScreen() {
@@ -386,16 +573,29 @@
         overlay.style.display = 'none';
         document.body.style.overflow = ''; 
       }
-      hamburgerButton.addEventListener('click', openSidebar);
-      overlay.addEventListener('click', closeSidebar);
-      hamburgerButton.addEventListener('touchend', function(e) {
+      
+      // Handle both click and touch events
+      hamburgerButton.addEventListener('click', function(e) {
         e.preventDefault();
         openSidebar();
       });
-      overlay.addEventListener('touchend', function(e) {
+      
+      overlay.addEventListener('click', function(e) {
         e.preventDefault();
         closeSidebar();
       });
+      
+      // Add touch-specific handlers
+      hamburgerButton.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        openSidebar();
+      }, {passive: false});
+      
+      overlay.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        closeSidebar();
+      }, {passive: false});
+      
       window.closeSidebar = closeSidebar;
       window.sidebar = sidebar;
       window.hamburgerButton = hamburgerButton;
@@ -412,8 +612,37 @@
           window.closeSidebar();
         }
       });
+      
+      // Add touch handler
+      document.addEventListener('touchend', function(e) {
+        if (
+          window.sidebar && 
+          window.sidebar.classList.contains('sidebar-visible') &&
+          !window.sidebar.contains(e.target) &&
+          !window.hamburgerButton.contains(e.target)
+        ) {
+          window.closeSidebar();
+        }
+      }, {passive: true});
     }
 
+    // Handle orientation change
+    function handleOrientationChange() {
+      window.addEventListener('orientationchange', function() {
+        // Force layout recalculation
+        setTimeout(function() {
+          window.scrollTo(0, 0);
+          
+          // Adjust sidebar height if needed
+          const sidebar = document.getElementById('sidebar');
+          if (sidebar) {
+            sidebar.style.height = window.innerHeight + 'px';
+          }
+        }, 100);
+      });
+    }
+
+    // PWA service worker registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker
@@ -433,6 +662,18 @@
           .catch((error) => {
             console.error('Service Worker registration failed:', error);
           });
+      });
+    }
+    
+    // Add passive event listeners to improve scrolling performance
+    document.addEventListener('touchstart', function(){}, {passive: true});
+    document.addEventListener('touchmove', function(){}, {passive: true});
+    
+    // Add hover effects for desktop users
+    if (!('ontouchstart' in window)) {
+      const cards = document.querySelectorAll('.card, .blue-card');
+      cards.forEach(card => {
+        card.classList.add('hover:shadow-lg');
       });
     }
   </script>

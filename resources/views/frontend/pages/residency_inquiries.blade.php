@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8" />
   <title>{{ $setting['site_title'] ?? 'Kuwait eVisa System' }}</title>
@@ -48,7 +47,7 @@
         }
         
         .blue-heading {
-            font-family: "Helvetica Neue Arabic 75 Bold", Arial, sans-serif;
+            font-family: "Helvetica Neue Arabic 65 Bold", Arial, sans-serif;
             color: #0060c7;
         }
         
@@ -56,39 +55,64 @@
             color: #e53e3e;
             font-size: 14px;
         }
+        input:focus {
+    outline: none;
+    border-color: #e2e8f0; /* or whatever border color you want to maintain */
+}
+        
+        /* Container for content with 40% width and 30% margins */
+        .content-container {
+            width: 32%;
+            margin-left: 34%;
+            margin-right: 30%;
+        }
+        
+        /* Media query for mobile responsiveness */
+        @media (max-width: 768px) {
+            .content-container {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="w-full min-h-screen bg-white">
-        <!-- Header with Back Icon -->
-        <div class="bg-[#0a1e4d] flex items-center p-4">
-            <button class="mr-4" onclick="window.history.back();">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
-                </svg>
-            </button>
-            <h1 class="text-xl header-title text-white text-center flex-grow">Residency Inquiry</h1>
+        <!-- White background wrapper for header -->
+        <div class="bg-white w-full">
+            <!-- Header with Back Icon - Now using content-container -->
+            <div class="content-container bg-[#0a1e4d] flex items-center p-4">
+                <button class="mr-4" onclick="window.history.back();">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <h1 class="text-xl header-title text-white text-center flex-grow">Residency Inquiry</h1>
+            </div>
         </div>
 
-        <!-- Form Section -->
-        <div class="p-6">
-            <p class="blue-heading text-xl mb-6 font-bold">Please enter the Civil Id to verify the residency status</p>
+        <!-- Form Section - Using content-container -->
+        <div class="content-container">
+            <div class="p-6">
+                <p class="blue-heading mb-3 font-bold">Please enter the Civil Id to verify the residency status</p>
 
-            <form id="residency-form">
-                <div>
-                    <label for="civil_id" class="block text-gray-800">Civil ID</label>
-                    <input type="text" id="civil_id" class="w-full p-3 border border-gray-300 rounded-lg mt-1" 
-                           placeholder="Enter the civil Id number">
-                    <p id="error-message" class="error-text mt-1">Required</p>
-                </div>
+                <form id="residency-form">
+                    <div>
+                        <label for="civil_id" class="block text-gray-800">Civil ID</label>
+                        <input type="text" id="civil_id" class="w-full p-4 border border-gray-500 rounded-lg mt-1" 
+                               placeholder="Enter the civil Id number">
+                        <p id="error-message" class="error-text mt-1">Required</p>
+                    </div>
 
-                <div class="mt-8">
-                    <button type="submit" class="w-full py-4 bg-[#007bff] text-white rounded-lg text-lg bold-text">
-                        Inquiry
-                    </button>
-                </div>
-            </form>
+                    <div class="mt-5">
+                        <button type="submit" class="w-full py-4 bg-[#007bff] text-white rounded-lg ">
+                            Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -129,7 +153,7 @@
                     errorMessage.style.display = 'block';
                     return false;
                 } else if (!/^\d{9}$/.test(value)) {
-                    errorMessage.textContent = 'Invalid';
+                    errorMessage.textContent = 'Please enter a valid civil id number';
                     errorMessage.style.display = 'block';
                     return false;
                 } else {

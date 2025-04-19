@@ -45,6 +45,14 @@
         .header-text{
                   font-family: "Helvetica Neue Arabic 75 Bold"
         }
+        .blue-heading {
+            font-family: "Helvetica Neue Arabic 75 Bold", Arial, sans-serif;
+            color: #0060c7;
+        }
+        input:focus {
+    outline: none;
+    border-color: #6b7280; /* or whatever border color you want to maintain */
+}
     </style>
 </head>
 
@@ -60,14 +68,14 @@
             <h1 class="text-xl font-bold text-white text-center flex-grow header-text">Visa</h1>
         </div>
         <div class="p-6">
-            <p class="text-[#0060c7] text-xl mb-6 font-semibold">Fill the following information to retrieve the visa details</p>
+            <p class="blue-heading mb-5 font-bold">Fill the following information to retrieve the visa details</p>
 
             <form id="visaForm">
                 <div class="space-y-5">
                     <div>
-                        <label for="visa_number" class="text-gray-800">Visa Number</label>
+                        <label for="visa_number" class="text-gray-800 mb-6">Visa Number</label>
                         <input type="text" id="visa_number" 
-                            class="w-full p-3 border border-gray-300 rounded-lg mt-1" 
+                            class="w-full p-4 border border-gray-500 rounded-lg mt-1" 
                             placeholder="Enter your visa number">
                         <span id="visa_number_error" class="error-text hidden">Required</span>
                     </div>
@@ -75,7 +83,7 @@
                     <div>
                         <label for="moi_reference" class="text-gray-800">MOI Reference</label>
                         <input type="text" id="moi_reference" 
-                            class="w-full p-3 border border-gray-300 rounded-lg mt-1" 
+                            class="w-full p-4 border border-gray-500 rounded-lg mt-1" 
                             placeholder="Enter your MOI reference">
                         <span id="moi_reference_error" class="error-text hidden">Required</span>
                     </div>
@@ -83,14 +91,14 @@
                     <div>
                         <label for="passport_number" class="text-gray-800">Passport Number</label>
                         <input type="text" id="passport_number" 
-                            class="w-full p-3 border border-gray-300 rounded-lg mt-1" 
+                            class="w-full p-4 border border-gray-500 rounded-lg mt-1 mb-2" 
                             placeholder="Enter your passport number">
                         <span id="passport_number_error" class="error-text hidden">Required</span>
                     </div>
 
                     <div class="mt-8">
                         <button type="submit" 
-                            class="w-full py-4 bg-[#0060c7] text-white rounded-lg text-lg font-medium">
+                            class="w-full py-4 bg-[#147dec] text-white rounded-lg text-lg font-medium">
                             Inquiry
                         </button>
                     </div>
