@@ -73,9 +73,15 @@
                                     @endphp
 
                                     <!-- Status Change Button -->
-                                    <button
+                                    {{-- <button
                                         class="btn btn-sm my-2 btn-{{ $currentStatus['bg'] }} text-{{ $currentStatus['text'] }} open-status-modal"
                                         data-id="{{ $visa->id }}">
+                                        {{ ucfirst($status) }}
+                                    </button> --}}
+
+                                    <button
+                                        class="btn btn-sm my-2 btn-{{ $currentStatus['bg'] }} text-{{ $currentStatus['text'] }} status-change-btn"
+                                        data-id="{{ $visa->id }}" data-status="{{ $status }}">
                                         {{ ucfirst($status) }}
                                     </button>
                                 </td>
@@ -106,7 +112,7 @@
 
 
             <!-- Status Change Modal -->
-            <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="statusModalLabel"
+            {{-- <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="statusModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -136,14 +142,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>
 
 
     @push('script')
-        <script>
+        {{-- <script>
             $(document).ready(function() {
                 // Status change button click
                 $('.open-status-modal').on('click', function() {
@@ -181,7 +187,68 @@
                     });
                 });
             });
+        </script> --}}
+
+        <script>
+            $(document).ready(function() {
+                $('.status-change-btn').click(function() {
+                    const $button = $(this);
+                    const visaId = $button.data('id');
+                    const currentStatus = $button.data('status');
+
+                    // Status ঘুরানো হবে এই ম্যাপে
+                    const nextStatusMap = {
+                        'pending approved': 'approved',
+                        'approved': 'awaiting approval',
+                        'awaiting approval': 'pending approved'
+                    };
+
+                    const nextStatus = nextStatusMap[currentStatus] || 'pending approved';
+
+                    $.ajax({
+                        url: '{{ route('admin.updateVisaStatus') }}',
+                        method: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                            visa_id: visaId,
+                            visa_status: nextStatus
+                        },
+                        success: function(res) {
+                            if (res.success) {
+                                // বাটনের স্ট্যাটাস, কালার, টেক্সট আপডেট
+                                $button.data('status', nextStatus);
+                                $button.text(nextStatus.charAt(0).toUpperCase() + nextStatus.slice(
+                                    1));
+
+                                let bgClass = 'btn-secondary';
+                                let textClass = 'text-white';
+
+                                if (nextStatus === 'approved') {
+                                    bgClass = 'btn-success';
+                                    textClass = 'text-white';
+                                } else if (nextStatus === 'awaiting approval') {
+                                    bgClass = 'btn-warning';
+                                    textClass = 'text-black';
+                                } else if (nextStatus === 'pending approved') {
+                                    bgClass = 'btn-danger';
+                                    textClass = 'text-white';
+                                }
+
+                                // ক্লাস রিসেট করে নতুন ক্লাস বসানো
+                                $button.removeClass().addClass(
+                                    `btn btn-sm my-2 ${bgClass} ${textClass} status-change-btn`);
+                            }
+                        },
+                        error: function() {
+                            alert('Status update failed.');
+                        }
+                    });
+                });
+            });
         </script>
+
+
+
 
         <script>
             function confirmDelete(visaId) {
