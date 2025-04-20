@@ -73,13 +73,14 @@
                                     @endphp
 
                                     <!-- Status Change Button -->
-                                    <button id="changeStatusBtn"
-                                        class="btn btn-sm my-2 btn-{{ $currentStatus['bg'] }} text-{{ $currentStatus['text'] }}">
+                                    <button
+                                        class="btn btn-sm my-2 btn-{{ $currentStatus['bg'] }} text-{{ $currentStatus['text'] }} open-status-modal"
+                                        data-id="{{ $visa->id }}">
                                         {{ ucfirst($status) }}
                                     </button>
                                 </td>
                                 <td>
-                                    
+
                                     <a href="{{ route('admin.visas.edit', $visa->id) }}"
                                         class="btn btn-primary btn-sm">Edit</a>
 
@@ -144,13 +145,15 @@
     @push('script')
         <script>
             $(document).ready(function() {
-                // Modal - 
-                $('#changeStatusBtn').click(function() {
+                // Status change button click
+                $('.open-status-modal').on('click', function() {
+                    var visaId = $(this).data('id');
+                    $('#visaId').val(visaId); // Hidden input-এ ID বসিয়ে দিচ্ছি
                     $('#statusModal').modal('show');
                 });
 
-                // OK 
-                $('#updateStatusBtn').click(function() {
+                // OK Button Click
+                $('#updateStatusBtn').on('click', function() {
                     var newStatus = $('#visaStatus').val();
                     var visaId = $('#visaId').val();
 
@@ -165,39 +168,38 @@
                         success: function(response) {
                             if (response.success) {
                                 $('#statusModal').modal('hide');
-
                                 toastr.success(response.message, 'Success', {
-                                    positionClass: 'toast-top-right', // Position of the toast
-                                    timeOut: 3000, // Timeout duration (ms)
+                                    positionClass: 'toast-top-right',
+                                    timeOut: 3000,
                                 });
                                 window.location.reload();
-
                             }
                         },
-                        error: function(xhr) {
+                        error: function() {
                             alert("Error updating status. Please try again.");
                         }
                     });
                 });
             });
         </script>
+
         <script>
-    function confirmDelete(visaId) {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                document.getElementById('delete-form-' + visaId).submit();
+            function confirmDelete(visaId) {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById('delete-form-' + visaId).submit();
+                    }
+                });
             }
-        });
-    }
-</script>
+        </script>
     @endpush
 
 
