@@ -14,8 +14,6 @@
   <meta name="apple-mobile-web-app-title" content="Kuwait Visa" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="msapplication-TileColor" content="#082A64" />
-  <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('images/icon/mipmap-xhdpi/ic_launcher.png') }}">
-  <link rel="manifest" href="{{ route('pwa.manifest') }}">
   <meta name="description" content="{{ $setting['meta_description'] ?? 'Official Kuwait electronic visa verification system' }}">
 
     <script src="https://cdn.tailwindcss.com"></script>

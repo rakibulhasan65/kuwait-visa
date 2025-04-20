@@ -12,7 +12,7 @@
   <meta name="apple-mobile-web-app-title" content="Kuwait Visa" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="msapplication-TileColor" content="#0a1e4d" />
-  <link rel="icon" type="image/png" sizes="192x192" href="http://localhost/images/icon/mipmap-xhdpi/ic_launcher.png">
+  <!-- <link rel="icon" type="image/png" sizes="192x192" href="http://localhost/images/icon/mipmap-xhdpi/ic_launcher.png"> -->
   <link rel="manifest" href="http://localhost/manifest.json">
   <meta name="description" content="Official Kuwait electronic visa verification system">
 
