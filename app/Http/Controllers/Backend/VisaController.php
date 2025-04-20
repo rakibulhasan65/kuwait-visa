@@ -167,7 +167,7 @@ public function updateVisaStatus(Request $request)
     // Validation
     $request->validate([
         'visa_id' => 'required|exists:visas,id',
-        'visa_status' => 'required|in:Pending approved,approved,Awaiting approval'
+        'visa_status' => 'required|in:pending approved,approved,awaiting approval'
     ]);
 
     // Visa record খুঁজে নিয়ে status update করা

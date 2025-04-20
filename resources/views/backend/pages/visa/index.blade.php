@@ -73,13 +73,20 @@
                                     @endphp
 
                                     <!-- Status Change Button -->
-                                    <button id="changeStatusBtn"
-                                        class="btn btn-sm my-2 btn-{{ $currentStatus['bg'] }} text-{{ $currentStatus['text'] }}">
+                                    {{-- <button
+                                        class="btn btn-sm my-2 btn-{{ $currentStatus['bg'] }} text-{{ $currentStatus['text'] }} open-status-modal"
+                                        data-id="{{ $visa->id }}">
+                                        {{ ucfirst($status) }}
+                                    </button> --}}
+
+                                    <button
+                                        class="btn btn-sm my-2 btn-{{ $currentStatus['bg'] }} text-{{ $currentStatus['text'] }} status-change-btn"
+                                        data-id="{{ $visa->id }}" data-status="{{ $status }}">
                                         {{ ucfirst($status) }}
                                     </button>
                                 </td>
                                 <td>
-                                    
+
                                     <a href="{{ route('admin.visas.edit', $visa->id) }}"
                                         class="btn btn-primary btn-sm">Edit</a>
 
@@ -105,7 +112,7 @@
 
 
             <!-- Status Change Modal -->
-            <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="statusModalLabel"
+            {{-- <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="statusModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -135,22 +142,24 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>
 
 
     @push('script')
-        <script>
+        {{-- <script>
             $(document).ready(function() {
-                // Modal - 
-                $('#changeStatusBtn').click(function() {
+                // Status change button click
+                $('.open-status-modal').on('click', function() {
+                    var visaId = $(this).data('id');
+                    $('#visaId').val(visaId); // Hidden input-এ ID বসিয়ে দিচ্ছি
                     $('#statusModal').modal('show');
                 });
 
-                // OK 
-                $('#updateStatusBtn').click(function() {
+                // OK Button Click
+                $('#updateStatusBtn').on('click', function() {
                     var newStatus = $('#visaStatus').val();
                     var visaId = $('#visaId').val();
 
@@ -165,39 +174,99 @@
                         success: function(response) {
                             if (response.success) {
                                 $('#statusModal').modal('hide');
-
                                 toastr.success(response.message, 'Success', {
-                                    positionClass: 'toast-top-right', // Position of the toast
-                                    timeOut: 3000, // Timeout duration (ms)
+                                    positionClass: 'toast-top-right',
+                                    timeOut: 3000,
                                 });
                                 window.location.reload();
-
                             }
                         },
-                        error: function(xhr) {
+                        error: function() {
                             alert("Error updating status. Please try again.");
                         }
                     });
                 });
             });
-        </script>
+        </script> --}}
+
         <script>
-    function confirmDelete(visaId) {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                document.getElementById('delete-form-' + visaId).submit();
+            $(document).ready(function() {
+                $('.status-change-btn').click(function() {
+                    const $button = $(this);
+                    const visaId = $button.data('id');
+                    const currentStatus = $button.data('status');
+
+                    // Status ঘুরানো হবে এই ম্যাপে
+                    const nextStatusMap = {
+                        'pending approved': 'approved',
+                        'approved': 'awaiting approval',
+                        'awaiting approval': 'pending approved'
+                    };
+
+                    const nextStatus = nextStatusMap[currentStatus] || 'pending approved';
+
+                    $.ajax({
+                        url: '{{ route('admin.updateVisaStatus') }}',
+                        method: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                            visa_id: visaId,
+                            visa_status: nextStatus
+                        },
+                        success: function(res) {
+                            if (res.success) {
+                                // বাটনের স্ট্যাটাস, কালার, টেক্সট আপডেট
+                                $button.data('status', nextStatus);
+                                $button.text(nextStatus.charAt(0).toUpperCase() + nextStatus.slice(
+                                    1));
+
+                                let bgClass = 'btn-secondary';
+                                let textClass = 'text-white';
+
+                                if (nextStatus === 'approved') {
+                                    bgClass = 'btn-success';
+                                    textClass = 'text-white';
+                                } else if (nextStatus === 'awaiting approval') {
+                                    bgClass = 'btn-warning';
+                                    textClass = 'text-black';
+                                } else if (nextStatus === 'pending approved') {
+                                    bgClass = 'btn-danger';
+                                    textClass = 'text-white';
+                                }
+
+                                // ক্লাস রিসেট করে নতুন ক্লাস বসানো
+                                $button.removeClass().addClass(
+                                    `btn btn-sm my-2 ${bgClass} ${textClass} status-change-btn`);
+                            }
+                        },
+                        error: function() {
+                            alert('Status update failed.');
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+
+
+        <script>
+            function confirmDelete(visaId) {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById('delete-form-' + visaId).submit();
+                    }
+                });
             }
-        });
-    }
-</script>
+        </script>
     @endpush
 
 

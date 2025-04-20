@@ -88,6 +88,8 @@ Route::get('/captcha', function () {
 Route::get('/user-electronic-visa-download', [UserElectronicVisaDownload::class, 'userElectronicVisaDownload'])->name('user-electronic-visa-download');
 Route::get('/frontend-evisa-download', [UserElectronicVisaDownload::class, 'frontendEvisaDownload'])->name('frontend-evisa-download');
 Route::get('/visa-verification-scan',[KuwaitVisaAppsModelController::class,'verificationScan'])->name('visa-verification-scan');
+//home-visa-verification-scan
+Route::get('/home-visa-verification-scan',[KuwaitVisaAppsModelController::class,'verificationScanHome'])->name('home-visa-verification-scan');
 Route::get('/barcode-search', [KuwaitVisaAppsModelController::class, 'search'])->name('barcode.search');
 Route::get('/dashboard', function () {
     return view('backend.dashboard');

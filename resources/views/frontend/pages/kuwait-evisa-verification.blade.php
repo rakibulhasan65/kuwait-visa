@@ -507,7 +507,7 @@
               <img class="w-16 h-16" src="{{ asset('images/qr-code.png') }}" alt="MOI Logo" />
             </div>
             <p class="font-semibold mb-4 text-center">Verify the Documents and Certificates</p>
-            <a href="{{ route('visa-verification-scan') }}" class="block">
+            <a href="{{ route('home-visa-verification-scan') }}" class="block">
               <button class="blue-button">Verification</button>
             </a>
           </div>
