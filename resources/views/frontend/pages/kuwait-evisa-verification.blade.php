@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#082A64" />
   <meta name="application-name" content="Kuwait Visa" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
   <meta name="apple-mobile-web-app-title" content="Kuwait Visa" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="msapplication-TileColor" content="#082A64" />
@@ -81,7 +81,7 @@
   width: 92% !important;
   max-width: 500px !important;
   margin: 0 auto !important;
-  position: sticky !important;
+  /* position: sticky !important; */
   top: 0 !important;
   z-index: 30 !important;
 }

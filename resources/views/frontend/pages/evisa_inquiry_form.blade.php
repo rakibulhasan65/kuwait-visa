@@ -76,7 +76,7 @@
                         <label for="visa_number" class="text-gray-800 mb-6">Visa Number</label>
                         <input type="text" id="visa_number" 
                             class="w-full p-4 border border-gray-500 rounded-lg mt-1" 
-                            placeholder="Enter your visa number">
+                            placeholder="Enter your visa number" value="{{ old('visa_number') }}">
                         <span id="visa_number_error" class="error-text hidden">Required</span>
                     </div>
 
@@ -84,7 +84,7 @@
                         <label for="moi_reference" class="text-gray-800">MOI Reference</label>
                         <input type="text" id="moi_reference" 
                             class="w-full p-4 border border-gray-500 rounded-lg mt-1" 
-                            placeholder="Enter your MOI reference">
+                            placeholder="Enter your MOI reference" value="{{ old('mio_reference') }}">
                         <span id="moi_reference_error" class="error-text hidden">Required</span>
                     </div>
 
@@ -92,7 +92,7 @@
                         <label for="passport_number" class="text-gray-800">Passport Number</label>
                         <input type="text" id="passport_number" 
                             class="w-full p-4 border border-gray-500 rounded-lg mt-1 mb-2" 
-                            placeholder="Enter your passport number">
+                            placeholder="Enter your passport number" value="{{ old('passport_number') }}">
                         <span id="passport_number_error" class="error-text hidden">Required</span>
                     </div>
 
