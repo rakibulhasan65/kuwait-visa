@@ -23,6 +23,12 @@ class KuwaitVisaAppsModelController extends Controller
         return view('frontend.pages.evisa_inquiry_form');
     }
 
+
+    public function verificationScanHome()
+    {
+        return view('frontend.pages.visa-verification-scan-home');
+    }
+
     public function visaDetails(Request $request){
         // validate the request
         
