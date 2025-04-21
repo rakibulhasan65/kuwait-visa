@@ -210,7 +210,7 @@ $kuwaitTime = getKuwaitTime();
                         alt="Facebook" width="40px" class="social-img"></a>
             </div>
             <div class="copyright">
-                All rights reserved to the Public Authority of Manpower ©
+                <strong style="font-weight: bold">All rights reserved to the Public Authority of Manpower ©</strong>
             </div>
         </div>
     </div>

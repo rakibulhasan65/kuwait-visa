@@ -511,14 +511,11 @@
     top: -9px;
     left: 272px;
     font-family: "Jali Arabic-SemiBold";
-    font-weight: 600;
+    /* font-weight: 600; */
     color: #949eaf;
     font-size: 10.9px;
-    letter-spacing: -0.11px;
     white-space: nowrap;
     position: absolute;
-    line-height: normal;
-    direction: rtl;
 }
 
 .main-file .group-8 {
