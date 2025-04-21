@@ -16,7 +16,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="msapplication-TileColor" content="#082A64" />
   <meta name="description" content="{{ $setting['meta_description'] ?? 'Official Kuwait electronic visa verification system' }}">
-
+  <link rel="manifest" href="{{ route('pwa.manifest') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
             @font-face {
