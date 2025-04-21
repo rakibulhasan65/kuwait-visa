@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visa Details</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ asset('/images/icon/mipmap-xxxhdpi/ic_launcher.png') }}" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -804,9 +805,30 @@
                         </div>
                         <div>
                             <div class="text-xs text-right text-gray-500">Visa Status</div>
+                            @php
+                                $status = $evisaApps->visa_status ?? 'change visa status';
+                            
+                                // Define color map
+                                $statusMap = [
+                                    'approved' => ['bg' => '#16a34a', 'text' => 'white'], // Tailwind green-600
+                                    'awaiting approval' => ['bg' => '#facc15', 'text' => 'black'], // Tailwind yellow-400
+                                    'pending approved' => ['bg' => '#dc2626', 'text' => 'white'], // Tailwind red-600
+                                ];
+                            
+                                // Fallback color if status not found
+                                $currentStatus = $statusMap[strtolower($status)] ?? [
+                                    'bg' => '#9ca3af', // Tailwind gray-400
+                                    'text' => 'white',
+                                ];
+                            @endphp
+                            
+                            <!-- Status Badge with inline background -->
                             <div
-                                class="approved-green bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium inline-block mt-1">
-                                {{ ucfirst($evisaApps->visa_status) }}</div>
+                                style="background-color: {{ $currentStatus['bg'] }}; color: {{ $currentStatus['text'] }};"
+                                class="px-3 py-1 rounded-full text-xs font-medium inline-block mt-1">
+                                {{ ucfirst($status) }}
+                            </div>
+                        
                         </div>
                     </div>
 
@@ -943,6 +965,53 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      
+        if (!isMobile) {
+          document.head.innerHTML += `
+            <style>
+              body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: #f4f4f4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                text-align: center;
+              }
+      
+              .mobile-only-wrapper {
+                background: white;
+                padding: 2rem 3rem;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+              }
+      
+              .mobile-only-wrapper h3 {
+                color: #ff3e3e;
+                margin-bottom: 0.5rem;
+              }
+      
+              .mobile-only-wrapper p {
+                color: #333;
+              }
+            </style>
+          `;
+      
+          document.body.innerHTML = `
+            <div class="mobile-only-wrapper">
+              <h3>Mobile Device Required</h3>
+              <p>This app is only accessible on smartphones or tablets.</p>
+            </div>
+          `;
+        }
+      </script>
+
 
     <script>
         function switchTab(tabName) {

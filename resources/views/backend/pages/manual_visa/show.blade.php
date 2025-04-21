@@ -55,6 +55,7 @@
                                     <div class="card-header bg-light border-0 py-3">
                                         <h5 class="card-title mb-0">PDF Preview</h5>
                                     </div>
+                                    <a href="{{ asset($manual_visa->pdf_file) }}">aaa</a>
                                     <div class="card-body p-0">
                                         <embed src="{{ asset($manual_visa->pdf_file) }}" type="application/pdf"
                                             class="w-100 rounded-bottom" style="min-height: 400px; border: none;" />

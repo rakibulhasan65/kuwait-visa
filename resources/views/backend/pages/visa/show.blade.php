@@ -20,8 +20,8 @@
             <header class="group">
                 <div class="overlap-group"
                     style="background-image: url('{{ asset('frontend/assets/visa') }}/img/banner.svg')">
-                    <img class="logo-en" src="{{ asset('frontend/assets/visa') }}/img/watermark.png" alt="Logo" />
-                    <img class="img" src="{{ asset('frontend/assets/visa') }}/img/watermark.png" alt="Logo" />
+                    <img class="logo-en" src="{{ asset('frontend/assets/visa') }}/img/logo-en 5.png" alt="Logo" />
+                    <img class="img" src="{{ asset('frontend/assets/visa') }}/img/logo-en 5.png" alt="Logo" />
                     <img class="logo-en-2" src="{{ asset('frontend/assets/visa') }}/img/emblem.svg" alt="Logo" />
                     <h1 class="text-wrapper">تأشيرة إلكترونية</h1>
                     <img class="group-2" src="{{ asset('frontend/assets/visa') }}/img/Group 24.png"

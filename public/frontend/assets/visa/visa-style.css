@@ -4,6 +4,16 @@
     src: url("../../../fonts/Area-Extrabold.otf") format("opentype");
 }
 @font-face {
+    font-family: "Area Variable-NormalBold";
+    /* Area Variable-ExtraBold */
+    src: url("../../../fonts/Area-Black.otf") format("opentype");
+}
+@font-face {
+    font-family: "Area Variable-ExtendedBold";
+    /* Area Variable-ExtraBold */
+    src: url("../../../fonts/Area-BoldExtended.otf") format("opentype");
+}
+@font-face {
     font-family: "OCR-B-Letterpress-M-OT";
     src: url("../../../fonts/OCR-B-Letterpress-M-OT.otf") format("opentype");
 }
@@ -132,7 +142,7 @@
 .main-file .text-wrapper {
     top: 72px;
     left: 642px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 900;
     color: #313a46;
     font-size: 18px;
@@ -809,7 +819,7 @@
     letter-spacing: 0;
     position: absolute;
     left: -12px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 800;
     color: #2d47a3;
     font-size: 10px;
@@ -819,7 +829,7 @@
 .main-file .text-wrapper-21 {
     top: -1px;
     left: 67px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 800;
     color: #203ea7;
     font-size: 13px;
@@ -972,13 +982,15 @@
 
 .main-file .text-wrapper-26 {
     top: 318px;
-    left: 286px;
+    /* left: 286px; */
     font-family: "Jali Arabic-Bold";
     font-weight: 900;
     color: #000000;
     font-size: 13px;
     position: absolute;
     direction: rtl;
+    width: 340px;
+    left: 205px;
 }
 
 .main-file .group-17 {
@@ -1007,12 +1019,26 @@
 }
 
 .main-file .div-3 {
-    top: 17px;
+    /* top: 17px;
     left: 36px;
     font-family: "Jali Arabic-Bold";
     font-weight: 900;
     color: #121619;
     font-size: 14px;
+    white-space: nowrap;
+    position: absolute;
+    direction: rtl; */
+
+    
+    width: 200px;
+    top: 17px;
+    left: -50px;
+    font-family: "Jali Arabic-Bold";
+    font-weight: 900;
+    color: #121619;
+    font-size: 14px;
+    text-align: right;
+    line-height: normal;
     white-space: nowrap;
     position: absolute;
     direction: rtl;
@@ -1030,9 +1056,9 @@
 .main-file .text-wrapper-30 {
     position: absolute;
     width: 38px;
-    top: 6px;
+    top: 5px;
     left: 90px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 800;
     color: #203ea7;
     font-size: 10px;
@@ -1066,9 +1092,9 @@
 
 .main-file .text-wrapper-32 {
     position: absolute;
-    top: 0;
+    top: 1px;
     left: 0px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 600;
     color: #203ea7;
     font-size: 10px;
@@ -1079,7 +1105,7 @@
 .main-file .text-wrapper-33 {
     top: 0;
     left: 58px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 800;
     color: #203ea7;
     font-size: 12px;
@@ -1114,7 +1140,7 @@
     position: absolute;
     top: 1px;
     left: 3px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 800;
     color: #203ea7;
     font-size: 10px;
@@ -1124,7 +1150,7 @@
 .main-file .div-4 {
     top: 1px;
     left: 62px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 400;
     color: #203ea7;
     font-size: 12.5px;
@@ -1166,9 +1192,9 @@
 
 .main-file .text-wrapper-39 {
     position: absolute;
-    top: 4px;
+    top: 2px;
     left: -6px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 900;
     color: #1c3798;
     font-size: 10px;
@@ -1179,7 +1205,7 @@
 .main-file .text-wrapper-40 {
     top: 0;
     left: 51px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 800;
     color: #203ea7;
     font-size: 12px;
@@ -1211,12 +1237,12 @@
 }
 
 .main-file .text-wrapper-42 {
-    top: 4px;
+    top: 3px;
     letter-spacing: 0.1px;
     white-space: nowrap;
     position: absolute;
     left: 0;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 900;
     color: #1e399a;
     font-size: 10px;
@@ -1241,7 +1267,7 @@
     position: absolute;
     top: 48px;
     left: 2px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 800;
     color: #203ea7;
     font-size: 10px;
@@ -1279,7 +1305,7 @@
     position: absolute;
     top: 88px;
     left: 2px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 900;
     color: #203ea7;
     font-size: 10px;
@@ -1300,7 +1326,7 @@
     position: absolute;
     top: -8px;
     left: 0;
-    font-family: "Jali Arabic-SemiBold";
+    font-family: "Jali Arabic-NormalBold";
     font-weight: 900;
     color: #203ea7;
     font-size: 10px;
@@ -1369,11 +1395,15 @@
     white-space: nowrap;
 }
 
+.white-logo path {
+    /* fill: white; */
+  }
+
 .main-file .text-wrapper-53 {
     position: absolute;
-    top: 196px;
+    top: 195px;
     left: 1px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 800;
     color: #203ea7;
     font-size: 10px;
@@ -1411,7 +1441,7 @@
 .main-file .text-wrapper-56 {
     top: 195px;
     left: 74px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 800;
     color: #203ea7;
     font-size: 12px;
@@ -1433,7 +1463,7 @@
 .main-file .text-wrapper-57 {
     top: 0;
     left: 21px;
-    font-family: "Area Variable-ExtraBold";
+    font-family: "Area Variable-NormalBold";
     font-weight: 600;
     color: #121619;
     font-size: 12px;
