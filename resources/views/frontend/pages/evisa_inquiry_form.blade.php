@@ -15,7 +15,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="msapplication-TileColor" content="#082A64" />
   <meta name="description" content="{{ $setting['meta_description'] ?? 'Official Kuwait electronic visa verification system' }}">
-
+  <link rel="manifest" href="{{ route('pwa.manifest') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
             @font-face {
@@ -68,11 +68,12 @@
         <div class="p-6">
             <p class="blue-heading mb-5 font-bold">Fill the following information to retrieve the visa details</p>
 
-            <form id="visaForm">
+            <form id="visaForm" action="{{ route('web-app-evisa-details') }}" method="POST">
+                @csrf
                 <div class="space-y-5">
                     <div>
                         <label for="visa_number" class="text-gray-800 mb-6">Visa Number</label>
-                        <input type="text" id="visa_number" 
+                        <input type="text" id="visa_number" name="visa_number" 
                             class="w-full p-4 border border-gray-500 rounded-lg mt-1" 
                             placeholder="Enter your visa number" value="{{ old('visa_number') }}">
                         <span id="visa_number_error" class="error-text hidden">Required</span>
@@ -80,7 +81,7 @@
 
                     <div>
                         <label for="moi_reference" class="text-gray-800">MOI Reference</label>
-                        <input type="text" id="moi_reference" 
+                        <input type="text" id="moi_reference" name="moi_reference" 
                             class="w-full p-4 border border-gray-500 rounded-lg mt-1" 
                             placeholder="Enter your MOI reference" value="{{ old('mio_reference') }}">
                         <span id="moi_reference_error" class="error-text hidden">Required</span>
@@ -88,7 +89,7 @@
 
                     <div>
                         <label for="passport_number" class="text-gray-800">Passport Number</label>
-                        <input type="text" id="passport_number" 
+                        <input type="text" id="passport_number" name="passport_number" 
                             class="w-full p-4 border border-gray-500 rounded-lg mt-1 mb-2" 
                             placeholder="Enter your passport number" value="{{ old('passport_number') }}">
                         <span id="passport_number_error" class="error-text hidden">Required</span>
@@ -181,7 +182,7 @@
                 
                 if (isVisaValid && isMoiValid && isPassportValid) {
                     // Form is valid, proceed with submission
-                    // form.submit(); // Uncomment this line when connecting to backend
+                    form.submit(); // Uncomment this line when connecting to backend
                 }
             });
         });

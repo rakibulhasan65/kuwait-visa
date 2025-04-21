@@ -34,14 +34,14 @@ class KuwaitVisaAppsModelController extends Controller
         
         $request->validate([
         'visa_number' => 'required|digits:9',
-        'mio_reference' => 'required|digits:9',
+        'moi_reference' => 'required|digits:9',
         'passport_number' => 'required|min:6|max:15',
         ], [
             'visa_number.required' => 'Invalid',
             'visa_number.digits' => 'Invalid',
 
-            'mio_reference.required' => 'Invalid',
-            'mio_reference.digits' => 'Invalid',
+            'moi_reference.required' => 'Invalid',
+            'moi_reference.digits' => 'Invalid',
 
             'passport_number.required' => 'Invalid',
             'passport_number.min' => 'Invalid',
@@ -51,7 +51,7 @@ class KuwaitVisaAppsModelController extends Controller
         //  validation message blade file show
         
         $evisaApps = Visa::where('visa_number', $request->visa_number)
-        ->where('moi_reference', $request->mio_reference)
+        ->where('moi_reference', $request->moi_reference)
         ->where('passport_no', $request->passport_number)
         ->first();
 
