@@ -11,6 +11,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
+    <style>
+    .main-file .div-3 {
+        /* top: 17px;
+        left: 36px;
+        font-family: "Jali Arabic-Bold";
+        font-weight: 900;
+        color: #121619;
+        font-size: 14px;
+        white-space: nowrap;
+        position: absolute;
+        direction: rtl; */
+
+        
+        width: 200px;
+        top: 17px;
+        left: -50px;
+        font-family: "Jali Arabic-Bold";
+        font-weight: 900;
+        color: #121619;
+        font-size: 14px;
+        text-align: right;
+        line-height: normal;
+        white-space: nowrap;
+        position: absolute;
+        direction: rtl;
+    }
+</style>
 
 </head>
 
