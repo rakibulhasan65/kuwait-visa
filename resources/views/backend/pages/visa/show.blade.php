@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body style="min-width: 1100px !important;">
     <main class="main-file">
         <div class="paper" id="visa-details">
             <header class="group">
@@ -235,8 +235,24 @@
         </div>
     </main>
 
-
-    <button id="download-pdf">Download PDF</button>
+    <button id="download-pdf" style="
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+  ">
+    Download PDF
+  </button>
+  
 
     <script>
         
