@@ -1459,7 +1459,7 @@
 
 .main-file .text-wrapper-57 {
     top: 0;
-    left: 21px;
+    left: -80px;
     font-family: "Area Variable-NormalBold";
     font-weight: 600;
     color: #121619;
@@ -1470,6 +1470,7 @@
     line-height: normal;
     right: -10px;
     direction: rtl;
+    width: 250px;
 }
 
 .main-file .group-23 {
