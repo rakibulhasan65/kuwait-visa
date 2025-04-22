@@ -407,9 +407,12 @@
 </head>
 <body>
   <div id="splash-screen">
-    <img id="splash-image-1" src="{{ asset('images/splash-1.png') }}" alt="Kuwait Visa Logo" />
-    <img id="splash-image-2" src="{{ asset('images/app-splash.png') }}" alt="Kuwait Visa Splash" />
+  <div class="splash-inner">
+    <img id="splash-image-1" src="{{ asset('images/splash-1.png') }}" alt="Logo">
+    <img id="splash-image-2" src="{{ asset('images/app-splash.png') }}" alt="App Splash">
   </div>
+</div>
+
   
   <header class="w-full">
     <div class="header-content">
