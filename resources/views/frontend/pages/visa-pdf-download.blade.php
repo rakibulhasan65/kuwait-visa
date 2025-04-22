@@ -190,12 +190,12 @@
                                 <div class="group-14">
                                     <div class="overlap-group-4">
 
-                                        <p class="VBKWTALI-ABDUL-MAZID">
+                                        <p class="VBKWTALI-ABDUL-MAZID fixed-width-line">
                                             {{ $visa->barcode_text_up }}
                                         </p>
                                     </div>
                                 </div>
-                                <p class="div-2">
+                                <p class="div-2 fixed-width-line">
                                     <span class="span-2">{{ $visa->barcode_text_down }}</span>
                                 </p>
 
@@ -289,7 +289,7 @@
 
                 setTimeout(function() {
                     window.history.back();
-                }, 2000);
+                }, 3000);
             }
         }
 
@@ -304,7 +304,7 @@
 
                     setTimeout(function() {
                         window.history.back();
-                    }, 2000);
+                    }, 3000);
                 }
             }, 3000);
         };
