@@ -1612,7 +1612,7 @@ img {
     font-size: 19.5px;
     line-height: normal;
     letter-spacing: .5px;
-}
+} 
 .fixed-width-line {
     width: 45ch;             /* width for 45 characters */
     white-space: nowrap;     /* prevents wrapping */
