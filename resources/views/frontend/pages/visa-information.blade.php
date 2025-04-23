@@ -89,7 +89,7 @@
         <div class="">
             <h2 class="fw-bold"><ins>Manual Employment Visa Checking Rules</ins>:</h2>
             <p>
-                Click on the <a href="#visa-downloadc">Kuwait Police logo</a> at the bottom of this page, where it says
+                Click on the <a href="#visa-download">Kuwait Police logo</a> at the bottom of this page, where it says
                 <strong>Download or Print Employment Visa</strong>. This will open a page displaying the logos for the
                 <strong>Manual Visa</strong> and <strong>eVisa (Electronic Visa)</strong>. To download a Manual Employment
                 Visa,
