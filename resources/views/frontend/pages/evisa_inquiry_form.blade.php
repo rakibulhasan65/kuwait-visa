@@ -9,15 +9,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="#082A64" />
   <meta name="application-name" content="Kuwait Visa" />
+  <link rel="icon" href="{{ asset('/images/icon/mipmap-xxxhdpi/ic_launcher.png') }}" type="image/png">
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Kuwait Visa" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="msapplication-TileColor" content="#082A64" />
-  <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('images/icon/mipmap-xhdpi/ic_launcher.png') }}">
-  <link rel="manifest" href="{{ route('pwa.manifest') }}">
   <meta name="description" content="{{ $setting['meta_description'] ?? 'Official Kuwait electronic visa verification system' }}">
-
+  <link rel="manifest" href="{{ route('pwa.manifest') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
             @font-face {
@@ -70,29 +69,30 @@
         <div class="p-6">
             <p class="blue-heading mb-5 font-bold">Fill the following information to retrieve the visa details</p>
 
-            <form id="visaForm">
+            <form id="visaForm" action="{{ route('web-app-evisa-details') }}" method="POST">
+                @csrf
                 <div class="space-y-5">
                     <div>
                         <label for="visa_number" class="text-gray-800 mb-6">Visa Number</label>
-                        <input type="text" id="visa_number" 
+                        <input type="text" id="visa_number" name="visa_number" 
                             class="w-full p-4 border border-gray-500 rounded-lg mt-1" 
-                            placeholder="Enter your visa number">
+                            placeholder="Enter your visa number" value="{{ old('visa_number') }}">
                         <span id="visa_number_error" class="error-text hidden">Required</span>
                     </div>
 
                     <div>
                         <label for="moi_reference" class="text-gray-800">MOI Reference</label>
-                        <input type="text" id="moi_reference" 
+                        <input type="text" id="moi_reference" name="moi_reference" 
                             class="w-full p-4 border border-gray-500 rounded-lg mt-1" 
-                            placeholder="Enter your MOI reference">
+                            placeholder="Enter your MOI reference" value="{{ old('mio_reference') }}">
                         <span id="moi_reference_error" class="error-text hidden">Required</span>
                     </div>
 
                     <div>
                         <label for="passport_number" class="text-gray-800">Passport Number</label>
-                        <input type="text" id="passport_number" 
+                        <input type="text" id="passport_number" name="passport_number" 
                             class="w-full p-4 border border-gray-500 rounded-lg mt-1 mb-2" 
-                            placeholder="Enter your passport number">
+                            placeholder="Enter your passport number" value="{{ old('passport_number') }}">
                         <span id="passport_number_error" class="error-text hidden">Required</span>
                     </div>
 
@@ -106,6 +106,53 @@
             </form>
         </div>
     </div>
+
+    <script>
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      
+        if (!isMobile) {
+          document.head.innerHTML += `
+            <style>
+              body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: #f4f4f4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                text-align: center;
+              }
+      
+              .mobile-only-wrapper {
+                background: white;
+                padding: 2rem 3rem;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+              }
+      
+              .mobile-only-wrapper h3 {
+                color: #ff3e3e;
+                margin-bottom: 0.5rem;
+              }
+      
+              .mobile-only-wrapper p {
+                color: #333;
+              }
+            </style>
+          `;
+      
+          document.body.innerHTML = `
+            <div class="mobile-only-wrapper">
+              <h3>Mobile Device Required</h3>
+              <p>This app is only accessible on smartphones or tablets.</p>
+            </div>
+          `;
+        }
+      </script>
+      
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -183,7 +230,7 @@
                 
                 if (isVisaValid && isMoiValid && isPassportValid) {
                     // Form is valid, proceed with submission
-                    // form.submit(); // Uncomment this line when connecting to backend
+                    form.submit(); // Uncomment this line when connecting to backend
                 }
             });
         });

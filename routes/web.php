@@ -38,12 +38,6 @@ Route::get('/manifest.json', function() {
                     'sizes' => '48x48',
                     'type' => 'image/png',
                     'purpose' => 'any maskable'
-                ],
-                [
-                    'src' => asset('images/icon/mipmap-xxxhdpi/ic_launcher_round.png'),
-                    'sizes' => '512x512',
-                    'type' => 'image/png',
-                    'purpose' => 'maskable'
                 ]
             ]
         ])->header('Content-Type', 'application/manifest+json');

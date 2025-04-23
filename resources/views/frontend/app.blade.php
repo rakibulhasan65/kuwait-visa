@@ -9,6 +9,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Kuwait Visa">
     <link rel="manifest" href="{{ route('pwa.manifest') }}">
+    <link rel="icon" href="{{ asset('/images/icon/mipmap-xxxhdpi/ic_launcher.png') }}" type="image/png">
     <title>{{ $setting['site_title'] ?? 'Kuwait eVisa System' }}</title>
     <meta name="description" content="{{ $setting['meta_description'] ?? 'Official Kuwait electronic visa verification system' }}">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -214,7 +215,7 @@ $kuwaitTime = getKuwaitTime();
                         alt="Facebook" width="40px" class="social-img"></a>
             </div>
             <div class="copyright">
-                All rights reserved to the Public Authority of Manpower ©
+                <strong style="font-weight: bold">All rights reserved to the Public Authority of Manpower ©</strong>
             </div>
         </div>
     </div>
@@ -354,7 +355,7 @@ function handlePWARedirect() {
 
 document.addEventListener('DOMContentLoaded', handlePWARedirect);
 </script>
-
+  
 </body>
 
 </html>

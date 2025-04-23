@@ -5,6 +5,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" href="{{ asset('/images/icon/mipmap-xxxhdpi/ic_launcher.png') }}" type="image/png">
   <meta name="theme-color" content="#0a1e4d" />
   <meta name="application-name" content="Kuwait Visa" />
   <meta name="mobile-web-app-capable" content="yes" />
@@ -12,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Kuwait Visa" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="msapplication-TileColor" content="#0a1e4d" />
-  <link rel="icon" type="image/png" sizes="192x192" href="http://localhost/images/icon/mipmap-xhdpi/ic_launcher.png">
+  <!-- <link rel="icon" type="image/png" sizes="192x192" href="http://localhost/images/icon/mipmap-xhdpi/ic_launcher.png"> -->
   <link rel="manifest" href="http://localhost/manifest.json">
   <meta name="description" content="Official Kuwait electronic visa verification system">
 
@@ -406,6 +407,51 @@
       <button id="errorOkButton" class="error-button">OK</button>
     </div>
   </div>
+  <script>
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+    if (!isMobile) {
+      document.head.innerHTML += `
+        <style>
+          body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+          }
+  
+          .mobile-only-wrapper {
+            background: white;
+            padding: 2rem 3rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+          }
+  
+          .mobile-only-wrapper h3 {
+            color: #ff3e3e;
+            margin-bottom: 0.5rem;
+          }
+  
+          .mobile-only-wrapper p {
+            color: #333;
+          }
+        </style>
+      `;
+  
+      document.body.innerHTML = `
+        <div class="mobile-only-wrapper">
+          <h3>Mobile Device Required</h3>
+          <p>This app is only accessible on smartphones or tablets.</p>
+        </div>
+      `;
+    }
+  </script>
   
   <script>
     // Function to show the custom error popup

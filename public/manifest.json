@@ -37,12 +37,6 @@
       "type": "image/png"
     },
     {
-      "src": "/images/icon/mipmap-xxxhdpi/ic_launcher_round.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
       "src": "/images/kuwaitappslogo-r.png",
       "sizes": "512x512",
       "type": "image/png"
