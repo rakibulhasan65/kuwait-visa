@@ -87,7 +87,7 @@
         </div>
 
         <div class="">
-            <h2 class="fw-bold"><ins>Manual Employment Visa Checking Rules:</ins>:</h2>
+            <h2 class="fw-bold"><ins>Manual Employment Visa Checking Rules</ins>:</h2>
             <p>
                 Click on the <a href="#visa-downloadc">Kuwait Police logo</a> at the bottom of this page, where it says
                 <strong>Download or Print Employment Visa</strong>. This will open a page displaying the logos for the
@@ -133,17 +133,24 @@
                     will understand that all the information about your Employment Visa is correct..
                 </p>
             </div>
-        </div>
+        </div> --}}
         <div class="timeline-item">
             <div class="timeline-icon">
                 <div class="timeline-circle"></div>
             </div>
             <div class="timeline-content">
-                <p class="fw-bold">Remember: Application/Approval Number is 9 digits, Unified Number is 7 digits, Visa
-                    Number is 9 digits, Entry Number can be 5 to a maximum of 7 digits, but Position Number is 9 digits.
+                <p class="fw-bold">Important: Please note the following digit requirements for the Visa Application Status
+                    section:
                 </p>
+                <ol>
+                    <li><strong>Application/Approval Number</strong> – 9 digits</li>
+                    <li><strong>Unified Number</strong> – 7 digits</li>
+                    <li><strong>Visa Number</strong> – 9 digits</li>
+                    <li><strong>Entry Number</strong> – 5 to 7 digits (maximum)</li>
+                    <li><strong>Position Number</strong> – 9 digits</li>
+                </ol>
             </div>
-        </div> --}}
+        </div>
     </div>
     <div class="container text-center my-5">
         <div class="row justify-content-center">
