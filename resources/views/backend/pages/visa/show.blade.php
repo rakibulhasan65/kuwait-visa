@@ -1473,7 +1473,7 @@
 
 .main-file .text-wrapper-57 {
     top: 0;
-    left: -5px;
+    /* left: -5px; */
     font-family: "Area Variable-NormalBold";
     font-weight: 600;
     color: #121619;
