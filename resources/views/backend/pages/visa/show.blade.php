@@ -688,18 +688,18 @@
     left: 14px;
 }
 
-.main-file .text-wrapper-12 {
-    top: 17px;
+.main-file .text-wrapper-12 {    
+    top: 21px;
     left: 0px;
-    right: 15px;
+    right: 30px;
     font-family: "Jali Arabic-ExtraBold";
     font-weight: 800;
     color: #203ea7;
-    font-size: 17px;
-    letter-spacing: 0.34px;
     position: absolute;
     line-height: normal;
     direction: rtl;
+    font-size: 12.5px;
+    letter-spacing: 0.25px;
 }
 
 .main-file .text-wrapper-13 {
