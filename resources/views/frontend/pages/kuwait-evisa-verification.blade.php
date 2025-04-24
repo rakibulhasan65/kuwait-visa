@@ -406,7 +406,7 @@
   </style>
 </head>
 <body>
-  <div id="splash-screen">
+  <div id="splash-screen" style="display: none;">
   <div class="splash-inner">
     <img id="splash-image-1" src="{{ asset('images/splash-1.png') }}" alt="Logo">
     <img id="splash-image-2" src="{{ asset('images/app-splash.png') }}" alt="App Splash">
@@ -570,7 +570,6 @@
   <script>
 
     document.addEventListener('DOMContentLoaded', function () {
-      initializeSplashScreen();
       initializeSidebar();
       initializeBodyClickToCloseSidebar();
       handleOrientationChange();

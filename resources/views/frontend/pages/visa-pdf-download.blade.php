@@ -1681,7 +1681,7 @@ img {
 </style>
 </head>
 
-<body>
+<body style="min-width: 1100px !important;">
     <main class="main-file">
         <div class="paper" id="visa-details">
             <header class="group">
