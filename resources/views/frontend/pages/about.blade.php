@@ -5,26 +5,20 @@
     @endpush
     <div class="">
         <h1 class="fw-bold"><ins>About us</ins></h1>
-
-        <p>The webpage of Public Authority of Manpower is authorized and fully controlled by the <a
-                href="https://www.moi.gov.kw">Ministry of Interior</a> (MOI), State of Kuwait and
-            <a href="https://www.mofa.gov.kw">Ministry of Foreign
-                Affairs</a> (MOFA), State of Kuwait.
+        <p>
+            This webpage of the <a href="https://www.manpower.gov.kw">Public Authority of Manpower </a> (PAM) is authorized
+            and fully controlled by the <a href="https://www.moi.gov.kw"> Ministry of Interior </a> (MOI) and the <a
+                href="https://www.mofa.gov.kw"> Ministry of Foreign Affairs </a> (MOFA) of the State of Kuwait.
+        </p>
+        <p>
+            This <strong class="fw-bold fst-italic">"Employment Visa Information"</strong> service is provided and strictly
+            controlled by the <a href="https://www.moi.gov.kw">Ministry of Interior </a> (MOI) and the <a
+                href="https://www.mofa.gov.kw"> Ministry of Foreign Affairs </a> (MOFA) of the State of Kuwait.
         </p>
 
-        <p>This "Employment Visa Information" service is provided by the <a href="https://www.moi.gov.kw">Ministry of
-                Interior</a> (MOI), State of Kuwait and
-            <a href="https://www.mofa.gov.kw">Ministry of Foreign
-                Affairs</a> (MOFA), State of Kuwait. And it's strictly
-            controlled.
-        </p>
-
-        <p>This is an online service provided by the <a href="https://www.moi.gov.kw">Ministry of Interior</a> (MOI), State
-            of Kuwait. It helps facilitating the
-            procedures needed to recruit employees for business owners, as well as, handling all the transactions online.
-            This
-            service
-            allows you to:</p>
+        <p>This online service, offered by the <a href="https://www.moi.gov.kw">Ministry of Interior </a> (MOI), State of
+            Kuwait, streamlines the procedures for businesses to recruit employees and manages all related transactions
+            online. This service allows you to:</p>
 
         <div class="row">
             <div class="col-md-6 col-sm-12">
@@ -75,7 +69,7 @@
                     </li>
                     <li>
                         <div class="circle">12</div>
-                        <h5>View completeness status and jobs details</h5>
+                        <h5>View completeness status and job details</h5>
                     </li>
                     <li>
                         <div class="circle">13</div>
@@ -157,7 +151,7 @@
                     </li>
                     <li>
                         <div class="circle">31</div>
-                        <h5>Lists of contracts, locations and working hours</h5>
+                        <h5>Lists of contracts, locations, and working hours</h5>
                     </li>
                     <li>
                         <div class="circle">32</div>
@@ -181,11 +175,12 @@
                     </li>
                     <li>
                         <div class="circle" style="border: 2px solid #2b2cde">37</div>
-                        <h5 style="color: #2b2cde">Issued Employment Visa Cross check from Ministry of Interior, Kuwait</h5>
+                        <h5 style="color: #2b2cde">Cross-checking Issued Employment Visas from the Ministry of Interior,
+                            Kuwait</h5>
                     </li>
                     <li>
                         <div class="circle" style="border: 2px solid #2b2cde">38</div>
-                        <h5 style="color: #2b2cde">Employment Visa upload in this site</h5>
+                        <h5 style="color: #2b2cde">Uploading Employment Visas on this site</h5>
                     </li>
                     <li>
                         <div class="circle" style="border: 2px solid #2b2cde">39</div>
@@ -198,9 +193,8 @@
                     </li>
                     <li>
                         <div class="circle" style="border: 2px solid #2b2cde">41</div>
-                        <h5 style="color: #2b2cde">Ensuring that workers receive all benefits when they are released from
-                            employment or voluntarily
-                            retire</h5>
+                        <h5 style="color: #2b2cde">Ensuring that workers receive all benefits upon termination or voluntary
+                            retirement</h5>
                     </li>
                 </ul>
             </div>
@@ -211,10 +205,9 @@
     <div class="timeline">
         <h1 class="fw-bold"><ins>Approval of the Employment Visa (Manual and eVisa)</ins>:</h1>
 
-        <p>Approval copy is very important for a new Employment Visa holder. When an Employment Visa holder arrives in the
-            State of Kuwait, Immigration Officials check the Approval copy at the Airport, Sea port or Land port and allow
-            him to enter the State of Kuwait. Even if the Visa holder has a valid Employment Visa, if the person does not
-            have the Approval copy, then there may be obstacles in entering the State of Kuwait.</p>
+        <p>The Employment Visa Approval copy is crucial for new Employment Visa holders. Upon arrival in the State of
+            Kuwait, Immigration Officials at the airport, seaport, or land border verify the Approval copy before granting
+            entry. Even with a valid Employment Visa, entry to Kuwait may be hindered without the Approval copy.</p>
 
 
         <div class="timeline-item">
@@ -222,8 +215,8 @@
                 <div class="timeline-circle"></div>
             </div>
             <div class="timeline-content">
-                <p>The Approval copy mentions the Commercial License/Civil ID number of the company or sponsor, which
-                    verifies the authenticity of the company or sponsor.</p>
+                <p>The Approval copy includes the Commercial License or Civil ID number of the company or sponsor, which
+                    confirms their authenticity.</p>
             </div>
         </div>
         <div class="timeline-item">
@@ -231,7 +224,8 @@
                 <div class="timeline-circle"></div>
             </div>
             <div class="timeline-content">
-                <p>The Approval copy mentions the Office in the State of Kuwait from which the Employment Visa was issued.
+                <p>The Approval copy specifies the office within the State of Kuwait from which the Employment Visa was
+                    issued.
                 </p>
             </div>
         </div>
@@ -240,8 +234,8 @@
                 <div class="timeline-circle"></div>
             </div>
             <div class="timeline-content">
-                <p>The Approval copy contains the necessary name and address of the Company or Sponsor along with short
-                    information.</p>
+                <p>The Approval copy contains the necessary name and address of the Company or Sponsor, along with brief
+                    relevant information.</p>
             </div>
         </div>
         <div class="timeline-item">
@@ -249,7 +243,8 @@
                 <div class="timeline-circle"></div>
             </div>
             <div class="timeline-content">
-                <p>The Approval copy mentions the type of business or personal profession of the company or sponsor.</p>
+                <p>The Approval copy indicates the type of business or the personal profession of the company or sponsor.
+                </p>
             </div>
         </div>
         <div class="timeline-item">
@@ -257,8 +252,8 @@
                 <div class="timeline-circle"></div>
             </div>
             <div class="timeline-content">
-                <p>The Approval copy contains the company or sponsor's Employment permit number and the date of receipt of
-                    the permit.</p>
+                <p>The Approval copy contains the company's or sponsor's Employment permit number and the date the permit
+                    was received.</p>
             </div>
         </div>
         <div class="timeline-item">
@@ -266,8 +261,8 @@
                 <div class="timeline-circle"></div>
             </div>
             <div class="timeline-content">
-                <p>The Approval copy contains all the information of the Employment Visa holder such as: full name as
-                    written in the passport, passport number, nationality, date of birth and gender.</p>
+                <p>The Approval copy holds all the essential information of the Employment Visa holder, such as their full
+                    name (as it appears in their passport), passport number, nationality, date of birth, and gender.</p>
             </div>
         </div>
         <div class="timeline-item">
@@ -275,8 +270,8 @@
                 <div class="timeline-circle"></div>
             </div>
             <div class="timeline-content">
-                <p>The Approval copy contains the Employment Visa issue number, along with the month and year of visa issue
-                    in English.</p>
+                <p>The Approval copy includes the Employment Visa issue number, along with the month and year of visa
+                    issuance in English.</p>
             </div>
         </div>
         <div class="timeline-item">
@@ -284,20 +279,16 @@
                 <div class="timeline-circle"></div>
             </div>
             <div class="timeline-content">
-                <p>The Approval copy contains the monthly salary and occupation of the employee.</p>
+                <p>The Approval copy states the employee's monthly salary and occupation.</p>
             </div>
         </div>
         <div class="">
-            <p class="fst-italic fw-bold">The Approval Copy provides a new Employment Visa holder with all the correct
-                information,
-                including permission to enter the State of Kuwait, many of which are not recorded on the Visa. The Approval
-                Copy is issued by the Public Authority of Manpower along with the issuance of the Employment Visa.</p>
+            <p class="fst-italic fw-bold">The Approval Copy provides a new Employment Visa holder with comprehensive and
+                accurate information, including entry permission to the State of Kuwait, much of which is not detailed on
+                the visa itself. The Public Authority of Manpower issues the Approval Copy concurrently with the Employment
+                Visa.</p>
         </div>
     </div>
-
-
-
-
     </div>
 
 @endsection
