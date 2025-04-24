@@ -322,17 +322,17 @@
             <div class="row2" style="margin-top: 1rem;">
                 <div class="label2">Visa Type:</div>
                 <div class="value2" style="color: #3567b6; font-weight: 700;
-        margin-left: -90px;">
+        margin-left: -80px;">
                     {{ $evisaApps->visa_type_en }}
                 </div>
             </div>
             <div class="row2">
                 <div class="label2">Visa Purpose:</div>
-                <div class="value2 value-b" style="margin-left: -65px;">{{ $evisaApps->visa_purpose }}</div>
+                <div class="value2 value-b" style="margin-left: -57px;">{{ $evisaApps->visa_purpose }}</div>
             </div>
             <div class="row2">
                 <div class="label2">Place of Issue:</div>
-                <div class="value2 value-b" style="margin-left: -65px;">{{ $evisaApps->place_of_issue }}</div>
+                <div class="value2 value-b" style="margin-left: -54px;">{{ $evisaApps->place_of_issue }}</div>
             </div>
 
             <div class="row" style="margin-top: 24px">
