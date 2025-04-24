@@ -1816,12 +1816,12 @@ img {
                                 <div class="group-14">
                                     <div class="overlap-group-4">
 
-                                        <p class="VBKWTALI-ABDUL-MAZID">
+                                        <p class="VBKWTALI-ABDUL-MAZID fixed-width-line">
                                             {{ $visa->barcode_text_up }}
                                         </p>
                                     </div>
                                 </div>
-                                <p class="div-2">
+                                <p class="div-2 fixed-width-line">
                                     <span class="span-2">{{ $visa->barcode_text_down }}</span>
                                 </p>
 
@@ -1907,32 +1907,46 @@ img {
 
     <script>
         function downloadPDF() {
-            let downloadBtn = document.getElementById("download-pdf");
-            if (downloadBtn) {
-                // Download PDF
-                downloadBtn.click();
+            const {
+                jsPDF
+            } = window.jspdf;
+            const element = document.getElementById('visa-details');
 
+            // Set the scale to match A4 dimensions at 300 DPI
+            const scale = 300 / 96; // 300 DPI / 96 DPI (default screen resolution)
+            const pdfWidth = 210;
+            const pdfHeight = 297;
 
-                setTimeout(function() {
-                    window.history.back();
-                }, 1000);
-            }
+            html2canvas(element, {
+                scale: scale,
+                useCORS: true,
+                allowTaint: true,
+                backgroundColor: '#FFFFFF'
+            }).then(canvas => {
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'mm',
+                    format: [pdfWidth, pdfHeight]
+                });
+
+                const imgData = canvas.toDataURL('image/jpeg', 1.0);
+
+                // Add image at exact A4 dimensions without any scaling or positioning
+                pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+
+                pdf.save('{{ $visa->full_name_en }}.pdf');
+            });
         }
 
         window.onload = function() {
             setTimeout(function() {
-
-                let downloadBtn = document.getElementById("download-pdf");
-
-                if (downloadBtn) {
-                    downloadBtn.click();
+                    downloadPDF();
 
 
                     setTimeout(function() {
                         window.history.back();
-                    }, 1000);
-                }
-            }, 3000);
+                    }, 6000);
+            }, 2000);
         };
     </script>
 
