@@ -30,9 +30,10 @@
             color: white;
             padding: 1rem;
             text-align: center;
-            font-size: 1rem;
-            font-weight: bold;
+            font-size: 0.8rem;
+            font-weight: 700;
             align-content: center;
+            letter-spacing: 0.05rem;
         }
 
         .tabs {
@@ -40,7 +41,7 @@
             justify-content: space-around;
             background: #012447;
             color: white;
-            font-size: 0.95rem;
+            font-size: 0.7rem;
         }
 
         .tabs div {
@@ -65,7 +66,7 @@
             font-weight: bold;
             color: #003366;
             margin-bottom: 0.7rem;
-            font-size: 1rem;
+            font-size: 0.8rem;
             border-bottom: 1px solid #ccc;
             padding-bottom: 0.3rem;
         }
@@ -94,13 +95,13 @@
         .value {
             flex: 0 0 50%;
             text-align: right;
-            font-weight: bold;
+            font-weight: 700;
             color: #003366;
             word-break: break-word;
         }
 
         .value-b {
-            font-weight: bold;
+            font-weight: 700;
             color: #406195;
             word-break: break-word;
         }
@@ -108,16 +109,6 @@
         .value2 {
             color: #818189;
             word-break: break-word;
-        }
-
-        .approved {
-            background-color: #059605;
-            color: white;
-            font-weight: bold;
-            padding: 0.4rem 0.6rem;
-            border-radius: 7px;
-            font-size: 0.85rem;
-            display: inline-block;
         }
 
         @media screen and (max-width: 480px) {
@@ -128,12 +119,12 @@
 
             .label,
             .value {
-                font-size: 0.85rem;
+                font-size: 0.7rem;
             }
 
             .label2,
             .value2 {
-                font-size: 0.85rem;
+                font-size: 0.7rem;
             }
         }
 
@@ -149,8 +140,9 @@
         .visa-holder-header {
             margin: -16px -16px 12px -16px;
             border-radius: 9px 9px 0px 0px;
-            font-size: 0.9rem;
-            font-weight: bold;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.03rem;
             align-content: center;
             color: #4668a8;
             background-color: #f0f1f5;
@@ -160,7 +152,7 @@
 
         .visa-holder-row {
             margin: 0px 0;
-            font-size: 0.85rem;
+            font-size: 0.7rem;
         }
 
         .visa-justify-between {
@@ -173,7 +165,7 @@
         }
 
         .visa-holder-value {
-            font-weight: bolder;
+            font-weight: 700;
             color: #7f7e87;
             margin-top: 3px;
         }
@@ -203,14 +195,14 @@
         }
 
         .qr-title p {
-            font-size: 0.875rem;
+            font-size: 0.7rem;
             color: #3b82f6;
-            font-weight: bold;
+            font-weight: 700;
         }
 
         .qr-box {
-            width: 15rem;
-            height: 15rem;
+            width: 13rem;
+            height: 13rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -227,10 +219,10 @@
 
         .status-badge {
             display: inline-block;
-            padding: 0.4rem 0.6rem;
+            padding: 0.3rem 0.5rem;
             border-radius: 7px;
-            font-size: 0.75rem;
-            font-weight: 500;
+            font-size: 0.6rem;
+            font-weight: 600;
         }
 
         /* Status color variations */
@@ -274,7 +266,7 @@
         Visa Details
     </div>
 
-    <div class="flex text-white" style="background: #36456e; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.05rem;">
+    <div class="flex text-white" style="background: #36456e; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.03rem;">
         <button onclick="showTab('details')" id="tab-details"
             class="flex-1 text-center py-3 px-4 flex items-center justify-center gap-2 border-b-2 border-transparent hover:border-blue-400 focus:outline-none">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -304,7 +296,7 @@
             <div class="row">
                 <div class="label"
                     style="
-                flex: 0 0 22%; color: #3567b6; font-weight: 800;
+                flex: 0 0 22%; color: #3567b6; font-weight: 700;
             ">
                     {{ $evisaApps->visa_number }}
                 </div>
@@ -329,18 +321,18 @@
 
             <div class="row2" style="margin-top: 1rem;">
                 <div class="label2">Visa Type:</div>
-                <div class="value2" style="color: #3567b6; font-weight: bolder;
-        margin-left: -80px;">
+                <div class="value2" style="color: #3567b6; font-weight: 700;
+        margin-left: -90px;">
                     {{ $evisaApps->visa_type_en }}
                 </div>
             </div>
             <div class="row2">
                 <div class="label2">Visa Purpose:</div>
-                <div class="value2 value-b" style="margin-left: -57px;">{{ $evisaApps->visa_purpose }}</div>
+                <div class="value2 value-b" style="margin-left: -65px;">{{ $evisaApps->visa_purpose }}</div>
             </div>
             <div class="row2">
                 <div class="label2">Place of Issue:</div>
-                <div class="value2 value-b" style="margin-left: -54px;">{{ $evisaApps->place_of_issue }}</div>
+                <div class="value2 value-b" style="margin-left: -65px;">{{ $evisaApps->place_of_issue }}</div>
             </div>
 
             <div class="row" style="margin-top: 24px">
@@ -348,12 +340,11 @@
                 <div class="label" style="text-align: end;">Date of Expiry</div>
             </div>
             <div class="row">
-                <div class="value" style="
-                flex: 0 0 22%; color: #3567b6; font-weight: bolder;
+                <div class="value" style="text-align: start; color: #3567b6; font-weight: 700;
             ">{{ $evisaApps->issue_date }}</div>
                 <div class="value"
                     style="
-                flex: 0 0 22%; color: #3567b6; font-weight: bolder;
+                flex: 0 0 22%; color: #3567b6; font-weight: 700;
             ">
                     {{ $evisaApps->expiry_date }}
                 </div>
@@ -468,7 +459,8 @@
             style="width: 100%;
     border-top: 2px solid #131359;
     border-radius: 8px;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 0.8rem;
     padding-top: 12px;"
             class="fixed bottom-5">
             Note
@@ -480,10 +472,10 @@
         <!-- Bottom Drawer -->
         <div id="bottomDrawer"
             class="fixed bottom-0 inset-x-0 bg-white rounded-t-2xl shadow-lg p-4 z-50 transform translate-y-full h-[35vh] transition-transform duration-300 ease-in-out">
-            <h2 class="text-sm font-bold mb-2 text-center text-blue-900">Note</h2>
+            <h2 class="text-sm font-bold mb-2 text-center text-blue-900" style="font-size: 0.75rem;">Note</h2>
 
             <div class="visa-holder-divider"></div>
-            <p class="text-gray-700">
+            <p class="text-gray-700" style="font-size: 0.75rem;">
                 Scanning this QR Code by another party would allow them to retrieve your visa information
             </p>
         </div>
