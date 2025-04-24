@@ -241,7 +241,7 @@
 
         .status-awaiting-approval {
             background-color: #facc15;
-            color: black;
+            color: white;
         }
 
         .status-pending-approved {
@@ -274,7 +274,7 @@
         Visa Details
     </div>
 
-    <div class="flex text-white" style="background: #36456e;">
+    <div class="flex text-white" style="background: #36456e; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.05rem;">
         <button onclick="showTab('details')" id="tab-details"
             class="flex-1 text-center py-3 px-4 flex items-center justify-center gap-2 border-b-2 border-transparent hover:border-blue-400 focus:outline-none">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -298,13 +298,13 @@
     <div id="content-details" class="mt-4">
         <div class="containerr" style="background: #f0f1f5; width: auto;">
             <div class="row">
-                <div class="label">Visa Number:</div>
-                <div class="value">Visa Status:</div>
+                <div class="label">Visa Number</div>
+                <div class="label" style="text-align: end;">Visa Status</div>
             </div>
             <div class="row">
                 <div class="label"
                     style="
-                flex: 0 0 22%; color: #3567b6; font-weight: bolder;
+                flex: 0 0 22%; color: #3567b6; font-weight: 800;
             ">
                     {{ $evisaApps->visa_number }}
                 </div>
@@ -326,9 +326,8 @@
                     </div>
                 </div>
             </div>
-            <br />
 
-            <div class="row2">
+            <div class="row2" style="margin-top: 1rem;">
                 <div class="label2">Visa Type:</div>
                 <div class="value2" style="color: #3567b6; font-weight: bolder;
         margin-left: -80px;">
@@ -345,11 +344,13 @@
             </div>
 
             <div class="row" style="margin-top: 24px">
-                <div class="label">Date of Issue:</div>
-                <div class="value" style="color: #3567b6; font-weight: bolder;">Date of Expiry:</div>
+                <div class="label">Date of Issue</div>
+                <div class="label" style="text-align: end;">Date of Expiry</div>
             </div>
             <div class="row">
-                <div class="label">{{ $evisaApps->issue_date }}</div>
+                <div class="value" style="
+                flex: 0 0 22%; color: #3567b6; font-weight: bolder;
+            ">{{ $evisaApps->issue_date }}</div>
                 <div class="value"
                     style="
                 flex: 0 0 22%; color: #3567b6; font-weight: bolder;
@@ -410,7 +411,7 @@
             <div class="visa-justify-between">
                 <div class="visa-holder-row">
                     <div class="visa-holder-label">Date Of Birth</div>
-                    <div class="visa-holder-value" style="text-align: end;">{{ $evisaApps->dob }}</div>
+                    <div class="visa-holder-value">{{ $evisaApps->dob }}</div>
                 </div>
                 <div class="visa-holder-row">
                     <div class="visa-holder-label">Place of Issue</div>
@@ -428,7 +429,7 @@
         </div>
 
 
-        <div class="visa-holder-container" style="margin-top: 1rem;">
+        <div class="visa-holder-container" style="margin-top: 1rem; margin-bottom: 1rem;">
             <h3 class="visa-holder-header"><span style="margin-top: auto; margin-bottom: auto;">Employer / Family
                     Breadwinner Details</span></h3>
 
