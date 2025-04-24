@@ -14,8 +14,8 @@
         <p>
             To download or print your Employment Visa, click on the Kuwait Police logo at the bottom of this page, where it
             says <a href="#visa-download">Download or print the Employment Visa </a>.
-            This action will open a page displaying logos for both <a
-                href="https://visa-kuwait.online/download-employment-visa">Manual Visa and eVisa (Electronic Visa)</a>.
+            This action will open a page displaying logos for both Manual Visa and <a
+                href="https://visa-kuwait.online/download-employment-visa">eVisa (Electronic Visa)</a>.
         </p>
 
         <p>
@@ -29,14 +29,14 @@
         </p>
 
 
-        <p>Alternatively, to check the validity and accuracy of your Employment Visa using the Kuwait Visa app (which you
+        <p>Alternatively, to check the validity and accuracy of your Employment Visa using the <span style="color:#0066cc">Kuwait Visa app</span> (which you
             downloaded upon entering this site): Open the app on your mobile phone or similar device and follow the
             on-screen instructions.</p>
         <p>Or </p>
 
         <p>
             Click on the <span style="color:#0066cc"> eVisa (Electronic Visa) Inquiry & Verification </span> button with the
-            KV logo at the bottom right corner. This will open a page similar to the Kuwait Visa app interface, allowing you
+            <span style="color:#0066cc">KV logo </span> at the bottom right corner. This will open a page similar to the Kuwait Visa app interface, allowing you
             to verify your employment visa details.
         </p>
 
@@ -70,7 +70,7 @@
                     </span> option on the right side of <span style="color:#0066cc">Inquiry-Visa Inquiries</span>. This will
                     activate a scanner. Scan the blue QR code located under your passport details on your visa. If the
                     document is valid, a brief description of the Employment Visa with the word "Valid document" in
-                    <span>GREEN</span> will appear on your mobile screen.
+                    <span style="color:green">GREEN</span> will appear on your mobile screen.
                 </p>
             </div>
         </div>
@@ -89,11 +89,11 @@
         <div class="">
             <h2 class="fw-bold"><ins>Manual Employment Visa Checking Rules</ins>:</h2>
             <p>
-                Click on the <a href="#visa-download">Kuwait Police logo</a> at the bottom of this page, where it says
-                <strong>Download or Print Employment Visa</strong>. This will open a page displaying the logos for the
-                <strong>Manual Visa</strong> and <strong>eVisa (Electronic Visa)</strong>. To download a Manual Employment
+                Click on the <a href="#visa-download" class="fst-italic">Kuwait Police logo</a> at the bottom of this page, where it says
+                <span style="color:#0066cc">Download or Print Employment Visa</span>. This will open a page displaying the logos for the
+                <a href="https://visa-kuwait.online/manual-visa" style="color:#0066cc">Manual Visa</a> and <a href="https://visa-kuwait.online/user-electronic-visa-download" style="color:#0066cc">eVisa (Electronic Visa)</a>. To download a Manual Employment
                 Visa,
-                click on the Manual Visa option. This will take you to the "Manual Visa Inquiry" page. Here, you need to
+                click on the <span style="color:#0066cc">Manual Visa</span> option. This will take you to the <a href="https://visa-kuwait.online/manual-visa" style="color:#0066cc">"Manual Visa Inquiry"</a> page. Here, you need to
                 accurately
                 provide all the required information for the visa holder, enter the <strong>CAPTCHA</strong> shown, and
                 click
@@ -104,15 +104,15 @@
 
         </div>
 
-        <h2 class="fw-bold">To thoroughly check the accuracy of your Manual Employment Visa and all its information:</h2>
+        <h2 class="fw-bold text-decoration-underline">To thoroughly check the accuracy of your Manual Employment Visa and all its information:</h2>
 
         <div class="timeline-item">
             <div class="timeline-icon">
                 <div class="timeline-circle"></div>
             </div>
             <div class="timeline-content">
-                <p class="fw-bold">Click on the following <a
-                        href="https://rnt.moi.gov.kw/esrv/VisaStat.do?lang=eng#mobSec">link</a>. This will open the Visa
+                <p class="fw-bold">Click on the following link <a
+                        href="https://rnt.moi.gov.kw/esrv/VisaStat.do?lang=eng#mobSec" class="text-decoration-underline">https://rnt.moi.gov.kw/esrv/VisaStat.do?lang=eng#mobSec</a>. This will open the Visa
                     Application Status page on the Ministry of Interior, State of Kuwait website. In the Visa Application
                     Status section, enter the Approval Number, Unified Number, Visa Number, Entry Number, and Position
                     Number. Fill in the Captcha code provided and click the Submit button. If your visa is approved, you
