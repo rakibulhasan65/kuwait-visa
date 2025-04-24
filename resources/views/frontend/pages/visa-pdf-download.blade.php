@@ -445,7 +445,7 @@
 }
 
 .main-file .text-wrapper-5 {
-    top: 5px;
+    top: 0px;
     left: 136px;
     font-family: "Jali Arabic-Medium";
     /* font-weight: 400; */
@@ -476,7 +476,7 @@
 
 .main-file .text-wrapper-6 {
     position: absolute;
-    top: 5px;
+    top: 0px;
     left: 6px;
     font-family: "Jali Arabic-Medium";
     /* font-weight: 400; */
@@ -487,7 +487,7 @@
 }
 
 .main-file .text-wrapper-7 {
-    top: 5px;
+    top: 0erpx;
     left: 120px;
     font-family: "Jali Arabic-Medium";
     /* font-weight: 400; */
