@@ -14,6 +14,10 @@
     <meta name="description" content="{{ $setting['meta_description'] ?? 'Official Kuwait electronic visa verification system' }}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+ <link rel="icon" type="image/png" sizes="192x192" href="{{ asset($setting['favicon'] ?? '') }}">
+
+
     {{-- Cached Styles --}}
     @include('frontend.includes.styles')
     
