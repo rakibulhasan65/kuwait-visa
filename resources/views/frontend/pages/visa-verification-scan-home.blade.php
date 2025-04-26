@@ -248,8 +248,8 @@
       
       /* Original green border dimensions for mobile */
       .green-border {
-        width: 65%;
-        height: 55%;
+        width: 75%;
+        height: 65%;
         aspect-ratio: 1/1;
         transform: translate(-50%, -50%) translateY(-24px);
       }
