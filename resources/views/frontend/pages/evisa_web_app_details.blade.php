@@ -201,8 +201,8 @@
         }
 
         .qr-box {
-            width: 13rem;
-            height: 13rem;
+            width: 15rem;
+            height: 15rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -245,11 +245,84 @@
             background-color: #9ca3af;
             color: white;
         }
+            
+        
+        /* Loader Overlay */
+        #loaderOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #bcbbbb;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+
+        #loaderOverlay .loaderCard {
+        background: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        justify-items: center;
+        }
+
+        #loaderOverlay img {
+        width: 70px;
+        height: auto;
+        }
+
+        #loaderOverlay p {
+        font-size: 15px;
+        color: #003366;
+        margin: 10px 0;
+        font-family: Arial, sans-serif;
+        }
+
+        .dots {
+        display: flex;
+        gap: 2px;
+        margin-top: 10px;
+        }
+
+        .dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #ccc;
+        animation: bounce 1s infinite alternate;
+        }
+
+        .dot.active {
+        background-color: #002244; /* dark blue like your image */
+        }
+
+        @keyframes bounce {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-10px); }
+        }
+
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
+
+
+    <!-- Loader Overlay -->
+    <div id="loaderOverlay">
+        <div class="loaderCard">
+            <img src="{{ asset('/images/kuwaitappslogo-r.png') }}" alt="Logo">
+            <p>Please Wait...</p>
+            <div class="dots">
+            <div class="dot"></div>
+            <div class="dot active"></div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Background Banner -->
@@ -532,6 +605,13 @@
 
 
     <script>
+
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+            document.getElementById('loaderOverlay').style.display = 'none';
+            }, 1000); // Adjust time if needed (500ms = 0.5 sec)
+        });
+
         function toggleDrawer() {
             const drawer = document.getElementById('bottomDrawer');
             const backdrop = document.getElementById('backdrop');
@@ -543,6 +623,10 @@
     </script>
     <script>
         function showTab(tab) {
+            document.getElementById('loaderOverlay').style.display = 'flex';
+            setTimeout(() => {
+                document.getElementById('loaderOverlay').style.display = 'none';
+            }, 1000); // Adjust time if needed (500ms = 0.5 sec)
             document.getElementById("content-details").classList.add("hidden");
             document.getElementById("content-qr").classList.add("hidden");
             document.getElementById("tab-details").classList.remove("border-blue-500");

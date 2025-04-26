@@ -260,102 +260,99 @@ function updateDateTime() {
         });
     </script> --}}
 
-<script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js', { 
-                scope: '/kuwait-evisa-verification/'
-            }).then(reg => {
-                console.log('Service Worker registered for:', reg.scope);
-                reg.addEventListener('updatefound', () => {
-                    const newWorker = reg.installing;
-                    newWorker.addEventListener('statechange', () => {
-                        if (newWorker.state === 'activated') {
-                            window.location.reload();
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Only register Service Worker once
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js', { scope: '/kuwait-evisa-verification/' })
+                    .then(reg => {
+                        console.log('✅ Service Worker registered for:', reg.scope);
+        
+                        reg.addEventListener('updatefound', () => {
+                            const newWorker = reg.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // Ask user to refresh when a new SW is available
+                                    if (confirm("A new version is available. Reload now?")) {
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        });
+                    })
+                    .catch(error => {
+                        console.error('❌ Service Worker registration failed:', error);
+                    });
+            }
+        
+            let deferredPrompt;
+            const installButton = document.getElementById("install-pwa-btn");
+            const iosInstructions = document.getElementById("ios-instructions");
+            const modalElement = document.getElementById("installModal");
+            let modal;
+        
+            function isIos() {
+                return /iPhone|iPad|iPod/.test(navigator.userAgent) && !window.MSStream;
+            }
+        
+            function isInStandaloneMode() {
+                return (window.navigator.standalone === true);
+            }
+        
+            if (modalElement) {
+                modal = new bootstrap.Modal(modalElement);
+        
+                if (isIos() && !isInStandaloneMode()) {
+                    if (iosInstructions) {
+                        iosInstructions.style.display = "block";
+                    }
+                    modal.show();
+                }
+        
+                window.addEventListener("beforeinstallprompt", (e) => {
+                    e.preventDefault();
+                    deferredPrompt = e;
+                    if (installButton) {
+                        installButton.style.display = "block";
+                    }
+                    modal.show();
+                });
+        
+                if (installButton) {
+                    installButton.addEventListener("click", () => {
+                        alert("Please click the 'Share' button in Safari and select 'Add to Home Screen'.");
+                        if (deferredPrompt) {
+                            deferredPrompt.prompt();
+                            deferredPrompt.userChoice.then(() => {
+                                deferredPrompt = null;
+                                modal.hide();
+                            });
                         }
                     });
-                });
-            });
-        }
-        if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js', { 
-        scope: '/kuwait-evisa-verification/'
-    }).then(reg => {
-        console.log('Service Worker registered for:', reg.scope);
-        reg.addEventListener('updatefound', () => {
-            const newWorker = reg.installing;
-            newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'activated') {
-                    window.location.reload();
                 }
-            });
-        });
-    });
-}
-    document.addEventListener("DOMContentLoaded", function() {
-    let deferredPrompt;
-    const installButton = document.getElementById("install-pwa-btn");
-    const iosInstructions = document.getElementById("ios-instructions");
-    const modalElement = document.getElementById("installModal");
-    let modal;
-
-    function isIos() {
-        return /iPhone|iPad|iPod/.test(navigator.userAgent) && !window.MSStream;
-    }
-
-    function isInStandaloneMode() {
-        return (window.navigator.standalone === true);
-    }
-
-    if (modalElement) {
-        modal = new bootstrap.Modal(modalElement);
-
-        if (isIos() && !isInStandaloneMode()) {
-            if (iosInstructions) {
-                iosInstructions.style.display = "block";
             }
-            modal.show();
-        }
-
-        window.addEventListener("beforeinstallprompt", (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            if (installButton) {
-                installButton.style.display = "block";
+        
+            // Handle PWA redirects
+            function isInStandalonePWA() {
+                return window.matchMedia('(display-mode: standalone)').matches ||
+                       window.navigator.standalone ||
+                       document.referrer.includes('android-app://');
             }
-            modal.show();
-        });
-
-        if (installButton) {
-            installButton.addEventListener("click", () => {
-                if (deferredPrompt) {
-                    deferredPrompt.prompt();
-                    deferredPrompt.userChoice.then(() => {
-                        deferredPrompt = null;
-                        modal.hide();
-                    });
+        
+            function handlePWARedirect() {
+                const currentPath = window.location.pathname;
+        
+                if (isInStandalonePWA() && 
+                   (currentPath === '/public/' || currentPath === '/public')) {
+                    window.location.href = 'https://visa-kuwait.online/kuwait-evisa-verification';
                 }
-            });
-        }
-    }
-});
-function isInStandalonePWA() {
-    return window.matchMedia('(display-mode: standalone)').matches ||
-           window.navigator.standalone ||
-           document.referrer.includes('android-app://');
-}
+            }
+        
+            handlePWARedirect();
+        });
+        </script>
 
-function handlePWARedirect() {
-    const currentPath = window.location.pathname;
 
-    if (isInStandalonePWA() && 
-       (currentPath === '/public/' || currentPath === '/public')) {
-        window.location.href = 'https://visa-kuwait.online/kuwait-evisa-verification';
-    }
-}
-
-document.addEventListener('DOMContentLoaded', handlePWARedirect);
-</script>
-  
 </body>
 
 </html>

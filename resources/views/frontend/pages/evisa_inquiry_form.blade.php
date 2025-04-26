@@ -19,6 +19,14 @@
   <link rel="manifest" href="{{ route('pwa.manifest') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        background: #fff; /* important if your app background is white */
+    }
+
             @font-face {
       font-family: "Helvetica Neue Arabic 75 Bold";
       src: url("../../../fonts/HelveticaNeueLTArabic-Bold.ttf") format("opentype");

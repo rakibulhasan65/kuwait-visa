@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electronic Visa - State of Kuwait</title>
     <link rel="stylesheet" href="{{ asset('frontend/assets/visa/visa-global.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/assets/visa/visa-style.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('frontend/assets/visa/visa-style.css') }}" /> --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -689,26 +689,26 @@
 }
 
 .main-file .text-wrapper-12 {    
-    top: 21px;
-    left: 0px;
+    top: 22px;
+    left: 0px;  
     right: 30px;
-    font-family: "Jali Arabic-ExtraBold";
+    font-family: "Jali Arabic-NormalBold";
     font-weight: 800;
     color: #203ea7;
     position: absolute;
     line-height: normal;
     direction: rtl;
-    font-size: 12.5px;
+    font-size: 14.5px;
     letter-spacing: 0.25px;
 }
 
 .main-file .text-wrapper-13 {
-    top: 21px;
+    top: 22px;
     left: 359px;
-    font-family: "Jali Arabic-ExtraBold";
+    font-family: "Jali Arabic-NormalBold";
     font-weight: 800;
     color: #203ea7;
-    font-size: 12.5px;
+    font-size: 14.5px;
     letter-spacing: 0.25px;
     position: absolute;
     line-height: normal;
@@ -1897,7 +1897,8 @@ img {
                 scale: scale,
                 useCORS: true,
                 allowTaint: true,
-                backgroundColor: '#FFFFFF'
+                backgroundColor: '#FFFFFF',
+                letterRendering: true
             }).then(canvas => {
                 const pdf = new jsPDF({
                     orientation: 'portrait',

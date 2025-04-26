@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <title>{{ $setting['site_title'] ?? 'Kuwait eVisa System' }}</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" /> --}}
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="#082A64" />
   <meta name="application-name" content="Kuwait Visa" />
@@ -19,6 +20,14 @@
   <meta name="description" content="{{ $setting['meta_description'] ?? 'Official Kuwait electronic visa verification system' }}">
 
   <style>
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+      background: #fff; /* important if your app background is white */
+  }
+
     @font-face {
       font-family: "Helvetica Neue Arabic 75 Bold";
       src: url("../../../fonts/HelveticaNeueLTArabic-Bold.ttf") format("opentype");

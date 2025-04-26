@@ -117,7 +117,7 @@
       width: 70%;
       height: 60%;
       aspect-ratio: 1/1;
-      border: 4px solid #00FF00;
+      border: 3px solid #00FF00;
       pointer-events: none;
       z-index: 50;
     }

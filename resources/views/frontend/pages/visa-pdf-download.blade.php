@@ -731,26 +731,26 @@
 }
 
 .main-file .text-wrapper-12 {
-    top: 21px;
+    top: 22px;
     left: 0px;
     right: 30px;
-    font-family: "Jali Arabic-ExtraBold";
+    font-family: "Jali Arabic-NormalBold";
     font-weight: 800;
     color: #203ea7;
     position: absolute;
     line-height: normal;
     direction: rtl;
-    font-size: 12.5px;
+    font-size: 14.5px;
     letter-spacing: 0.25px;
 }
 
 .main-file .text-wrapper-13 {
-    top: 21px;
+    top: 22px;
     left: 359px;
-    font-family: "Jali Arabic-ExtraBold";
+    font-family: "Jali Arabic-NormalBold";
     font-weight: 800;
     color: #203ea7;
-    font-size: 12.5px;
+    font-size: 14.5px;
     letter-spacing: 0.25px;
     position: absolute;
     line-height: normal;
@@ -1907,36 +1907,35 @@ img {
 
     <script>
         function downloadPDF() {
-            const {
-                jsPDF
-            } = window.jspdf;
+            const { jsPDF } = window.jspdf;
             const element = document.getElementById('visa-details');
 
-            // Set the scale to match A4 dimensions at 300 DPI
-            const scale = 300 / 96; // 300 DPI / 96 DPI (default screen resolution)
+            const scale = 300 / 96; // 300 DPI / 96 DPI
             const pdfWidth = 210;
             const pdfHeight = 297;
 
-            html2canvas(element, {
-                scale: scale,
-                useCORS: true,
-                allowTaint: true,
-                backgroundColor: '#FFFFFF'
-            }).then(canvas => {
-                const pdf = new jsPDF({
-                    orientation: 'portrait',
-                    unit: 'mm',
-                    format: [pdfWidth, pdfHeight]
+            document.fonts.ready.then(() => {
+                html2canvas(element, {
+                    scale: scale,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#FFFFFF',
+                    letterRendering: true
+                }).then(canvas => {
+                    const pdf = new jsPDF({
+                        orientation: 'portrait',
+                        unit: 'mm',
+                        format: [pdfWidth, pdfHeight]
+                    });
+
+                    const imgData = canvas.toDataURL('image/jpeg', 1.0);
+                    pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+
+                    pdf.save('{{ $visa->full_name_en }}.pdf');
                 });
-
-                const imgData = canvas.toDataURL('image/jpeg', 1.0);
-
-                // Add image at exact A4 dimensions without any scaling or positioning
-                pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
-
-                pdf.save('{{ $visa->full_name_en }}.pdf');
             });
         }
+
 
         window.onload = function() {
             setTimeout(function() {
