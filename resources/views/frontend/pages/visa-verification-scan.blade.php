@@ -114,10 +114,10 @@
       top: 50%;
       transform: translate(-50%, -50%) translateY(-24px);
       /* Make it a square with equal width/height */
-      width: 70%;
-      height: 60%;
+      width: 75%;
+      height: 65%;
       aspect-ratio: 1/1;
-      border: 3px solid #00FF00;
+      border: 2px solid #00FF00;
       pointer-events: none;
       z-index: 50;
     }
