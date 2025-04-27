@@ -1491,6 +1491,7 @@
 
 .main-file .text-wrapper-57 {
     top: 0;
+    right: 16px;
     /* left: -5px; */
     font-family: "Area Variable-NormalBold";
     font-weight: 600;
