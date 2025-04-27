@@ -689,27 +689,45 @@
 }
 
 .main-file .text-wrapper-12 {    
-    top: 22px;
+    top: 20px;
     left: 0px;  
     right: 30px;
-    font-family: "Jali Arabic-NormalBold";
-    font-weight: 800;
+    /* font-family: "Jali Arabic-NormalBold";
+    font-weight: 600;
     color: #203ea7;
     position: absolute;
     line-height: normal;
     direction: rtl;
     font-size: 14.5px;
-    letter-spacing: 0.25px;
+    letter-spacing: 0.25px; */
+    
+    font-family: "Area Variable-SemiBold";
+    font-weight: 600;
+    color: #203ea7;
+    font-size: 13px;
+    letter-spacing: 0;
+    position: absolute;
+    line-height: normal;
+    direction: rtl;
 }
 
 .main-file .text-wrapper-13 {
-    top: 22px;
+    top: 20px;
     left: 359px;
-    font-family: "Jali Arabic-NormalBold";
-    font-weight: 800;
+    /* font-family: "Jali Arabic-NormalBold";
+    font-weight: 600;
     color: #203ea7;
     font-size: 14.5px;
     letter-spacing: 0.25px;
+    position: absolute;
+    line-height: normal;
+    direction: rtl; */
+    
+    font-family: "Area Variable-SemiBold";
+    font-weight: 600;
+    color: #203ea7;
+    font-size: 13px;
+    letter-spacing: 0;
     position: absolute;
     line-height: normal;
     direction: rtl;

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electronic Visa - State of Kuwait</title>
     <link rel="stylesheet" href="{{ asset('frontend/assets/visa/visa-global.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/assets/visa/visa-style.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('frontend/assets/visa/visa-style.css') }}" /> --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -730,28 +730,46 @@
     left: 14px;
 }
 
-.main-file .text-wrapper-12 {
-    top: 22px;
-    left: 0px;
+.main-file .text-wrapper-12 {    
+    top: 20px;
+    left: 0px;  
     right: 30px;
-    font-family: "Jali Arabic-NormalBold";
-    font-weight: 800;
+    /* font-family: "Jali Arabic-NormalBold";
+    font-weight: 600;
     color: #203ea7;
     position: absolute;
     line-height: normal;
     direction: rtl;
     font-size: 14.5px;
-    letter-spacing: 0.25px;
+    letter-spacing: 0.25px; */
+    
+    font-family: "Area Variable-SemiBold";
+    font-weight: 600;
+    color: #203ea7;
+    font-size: 13px;
+    letter-spacing: 0;
+    position: absolute;
+    line-height: normal;
+    direction: rtl;
 }
 
 .main-file .text-wrapper-13 {
-    top: 22px;
+    top: 20px;
     left: 359px;
-    font-family: "Jali Arabic-NormalBold";
-    font-weight: 800;
+    /* font-family: "Jali Arabic-NormalBold";
+    font-weight: 600;
     color: #203ea7;
     font-size: 14.5px;
     letter-spacing: 0.25px;
+    position: absolute;
+    line-height: normal;
+    direction: rtl; */
+    
+    font-family: "Area Variable-SemiBold";
+    font-weight: 600;
+    color: #203ea7;
+    font-size: 13px;
+    letter-spacing: 0;
     position: absolute;
     line-height: normal;
     direction: rtl;
