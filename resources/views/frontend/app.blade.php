@@ -320,7 +320,7 @@ function updateDateTime() {
         
                 if (installButton) {
                     installButton.addEventListener("click", () => {
-                        alert("Please click the 'Share' button in Safari and select 'Add to Home Screen'.");
+                        // alert("Please click the 'Share' button in Safari and select 'Add to Home Screen'.");
                         if (deferredPrompt) {
                             deferredPrompt.prompt();
                             deferredPrompt.userChoice.then(() => {

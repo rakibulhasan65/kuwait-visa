@@ -1496,7 +1496,7 @@
     font-weight: 600;
     color: #121619;
     font-size: 12px;
-    text-align: left;
+    /* text-align: left; */
     letter-spacing: 0;
     position: absolute;
     line-height: normal;
